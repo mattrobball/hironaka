@@ -1,0 +1,299 @@
+% The sources of the library: its one bibliography.
+%
+% The key of an entry is the key by which everything cites the source: the attribute
+% `source KEY "locator" "page"` on a declaration, the docstrings and comments ([Hir64, Main
+% Theorem I], [Wlo05, §4.6]), the blueprint and the Markdown files. Item numbers in citations
+% ([Kol07, Theorem 68]) are the source's own. 
+%
+% What reads this file:
+% - HironakaReferences.lean registers every entry for the source attribute when it is
+%   compiled (Lake rebuilds it when this file changes; see lakefile.toml). The attribute links a
+%   citation to the url field of the entry, or else to the address of its doi.
+% - scripts/check_references.py checks that a source is listed here exactly when some file of the
+%   package cites it, and writes the Sources list of the blueprint (blueprint/Blueprint/
+%   Conventions.lean) from the entries that the blueprint cites (--write).
+% - scripts/check_formalization_yaml.py compares the sources of formalization.yaml with the
+%   entries of the same title (and their authors), and lets its alignment table write a key as
+%   the authors' last names and the year ("Hironaka 1964").
+% - scripts/build_docs.py gives this file to doc-gen4 for the bibliography of the API
+%   documentation (doc-gen4 reads only ASCII keys, so the script stands in for the others).
+%
+% To add a source: add its entry here and cite it (the check fails on an entry that nothing
+% cites); if the blueprint cites it, python3 scripts/check_references.py --write adds it to the
+% blueprint's list. To drop a source, delete its entry with its last citation.
+%
+% The file is written in the part of BibTeX that all of these read: an entry is
+% `type{key, field = {value}, ...}` after the at sign, a value is in braces or is a bare number,
+% accented letters are written as Unicode characters (no TeX macros), and braces protect
+% capitals in titles. These comments go between entries, on lines starting with a percent sign,
+% and never contain the at sign, which starts an entry.
+
+% Resolution of singularities: the sources followed
+
+@Article{Hir64,
+  author = {Hironaka, Heisuke},
+  title = {Resolution of singularities of an algebraic variety over a field of characteristic zero. {I}, {II}},
+  journal = {Annals of Mathematics (2)},
+  volume = {79},
+  year = {1964},
+  pages = {109--203 and 205--326},
+  doi = {10.2307/1970486},
+  note = {Part II: doi:10.2307/1970547}
+}
+
+% Kol07: the text consulted is the arXiv version of Chapter 3, and item numbers follow it; the url
+% field makes the source attribute link to that version.
+@Book{Kol07,
+  author = {Kollár, János},
+  title = {Lectures on Resolution of Singularities},
+  series = {Annals of Mathematics Studies},
+  volume = {166},
+  publisher = {Princeton University Press},
+  year = {2007},
+  eprint = {math/0508332},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/math/0508332v3},
+  note = {The arXiv text (v3) is the resolution chapter, circulated as a Seattle lecture; item numbers follow it}
+}
+
+% Wlo05: the arXiv version is v1 (2004).
+@Article{Wlo05,
+  author = {Włodarczyk, Jarosław},
+  title = {Simple {H}ironaka resolution in characteristic zero},
+  journal = {Journal of the American Mathematical Society},
+  volume = {18},
+  year = {2005},
+  pages = {779--822},
+  doi = {10.1090/S0894-0347-05-00493-5},
+  eprint = {math/0401401},
+  archiveprefix = {arXiv}
+}
+
+@InProceedings{Wlo09,
+  author = {Włodarczyk, Jarosław},
+  title = {Resolution of singularities of analytic spaces},
+  booktitle = {Proceedings of the 15th {G}ökova Geometry--Topology Conference (2008)},
+  publisher = {International Press},
+  year = {2009},
+  pages = {31--63},
+  url = {https://gokovagt.org/proceedings/2008/ggt08-wlodarczyk.pdf}
+}
+
+@Article{BM88,
+  author = {Bierstone, Edward and Milman, Pierre D.},
+  title = {Semianalytic and subanalytic sets},
+  journal = {Publications Mathématiques de l'IHÉS},
+  volume = {67},
+  year = {1988},
+  pages = {5--42},
+  doi = {10.1007/BF02699126}
+}
+
+% BM97: only Chapter I, the arXiv text, was consulted, and item numbers follow it; the url field
+% makes the source attribute link to it.
+@Article{BM97,
+  author = {Bierstone, Edward and Milman, Pierre D.},
+  title = {Canonical desingularization in characteristic zero by blowing up the maximum strata of a local invariant},
+  journal = {Inventiones Mathematicae},
+  volume = {128},
+  year = {1997},
+  pages = {207--302},
+  doi = {10.1007/s002220050141},
+  eprint = {alg-geom/9508005},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/alg-geom/9508005},
+  note = {Item numbers follow the arXiv version}
+}
+
+% BM08: the arXiv version is v1 (2007).
+@Article{BM08,
+  author = {Bierstone, Edward and Milman, Pierre D.},
+  title = {Functoriality in resolution of singularities},
+  journal = {Publications of the Research Institute for Mathematical Sciences},
+  volume = {44},
+  year = {2008},
+  pages = {609--639},
+  doi = {10.2977/prims/1210167338},
+  eprint = {math/0702375},
+  archiveprefix = {arXiv}
+}
+
+@Article{Hau03,
+  author = {Hauser, Herwig},
+  title = {The {H}ironaka theorem on resolution of singularities (or: {A} proof we always wanted to understand)},
+  journal = {Bulletin of the American Mathematical Society},
+  volume = {40},
+  year = {2003},
+  pages = {323--403},
+  doi = {10.1090/S0273-0979-03-00982-0}
+}
+
+% Hau14: the arXiv version is v1 (2014).
+@InCollection{Hau14,
+  author = {Hauser, Herwig},
+  title = {Blowups and resolution},
+  booktitle = {The Resolution of Singular Algebraic Varieties},
+  series = {Clay Mathematics Proceedings},
+  volume = {20},
+  publisher = {American Mathematical Society},
+  year = {2014},
+  pages = {1--80},
+  eprint = {1404.1041},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/1404.1041}
+}
+
+% Sta: cited by tag, [Sta, Tag 00TT]; the tags are the project's permanent identifiers.
+@Misc{Sta,
+  author = {{The Stacks Project Authors}},
+  title = {The {S}tacks {P}roject},
+  note = {Cited by tag},
+  url = {https://stacks.math.columbia.edu}
+}
+
+% Ati70: the Resolution Theorem, the local monomialization of a real-analytic function, which
+
+% Atiyah derives from Hironaka's theorem for the division of distributions.
+
+@Article{Ati70,
+  author = {Atiyah, Michael F.},
+  title = {Resolution of singularities and division of distributions},
+  journal = {Communications on Pure and Applied Mathematics},
+  volume = {23},
+  number = {2},
+  year = {1970},
+  pages = {145--150},
+  doi = {10.1002/cpa.3160230202}
+}
+
+% BG69: Lemma 1, the monomialization of a regular function on a real algebraic manifold, which
+
+% Bernstein and Gelfand derive from Hironaka's theorem for the meromorphic continuation of P^λ.
+
+@Article{BG69,
+  author = {Bernshtein, I. N. and Gel'fand, S. I.},
+  title = {Meromorphic property of the functions {P}^λ},
+  journal = {Functional Analysis and Its Applications},
+  volume = {3},
+  number = {1},
+  year = {1969},
+  pages = {68--69},
+  doi = {10.1007/BF01078276}
+}
+
+% Analytic geometry and analysis
+
+@Book{GR65,
+  author = {Gunning, Robert C. and Rossi, Hugo},
+  title = {Analytic Functions of Several Complex Variables},
+  publisher = {Prentice-Hall},
+  year = {1965},
+  note = {Reprinted, AMS Chelsea Publishing, 2009},
+  doi = {10.1090/chel/368}
+}
+
+@Book{GR71,
+  author = {Grauert, Hans and Remmert, Reinhold},
+  title = {Analytische {S}tellenalgebren},
+  series = {Grundlehren der mathematischen Wissenschaften},
+  volume = {176},
+  publisher = {Springer},
+  year = {1971},
+  doi = {10.1007/978-3-642-65033-8}
+}
+
+@Book{GR84,
+  author = {Grauert, Hans and Remmert, Reinhold},
+  title = {Coherent Analytic Sheaves},
+  series = {Grundlehren der mathematischen Wissenschaften},
+  volume = {265},
+  publisher = {Springer},
+  year = {1984},
+  doi = {10.1007/978-3-642-69582-7}
+}
+
+@Book{Nar66,
+  author = {Narasimhan, Raghavan},
+  title = {Introduction to the Theory of Analytic Spaces},
+  series = {Lecture Notes in Mathematics},
+  volume = {25},
+  publisher = {Springer},
+  year = {1966},
+  doi = {10.1007/BFb0077071}
+}
+
+@Misc{Fre17,
+  author = {Freitag, Eberhard},
+  title = {Complex Spaces},
+  howpublished = {Lecture notes, Universität Heidelberg},
+  year = {2017},
+  url = {https://www.mathi.uni-heidelberg.de/~freitag/skripten/complexspaces.pdf}
+}
+
+@Article{BW59,
+  author = {Bruhat, François and Whitney, Hassler},
+  title = {Quelques propriétés fondamentales des ensembles analytiques-réels},
+  journal = {Commentarii Mathematici Helvetici},
+  volume = {33},
+  year = {1959},
+  pages = {132--160},
+  doi = {10.1007/BF02565913}
+}
+
+@Article{Car57,
+  author = {Cartan, Henri},
+  title = {Variétés analytiques réelles et variétés analytiques complexes},
+  journal = {Bulletin de la Société Mathématique de France},
+  volume = {85},
+  year = {1957},
+  pages = {77--99},
+  doi = {10.24033/bsmf.1481}
+}
+
+@Book{Dem,
+  author = {Demailly, Jean-Pierre},
+  title = {Complex Analytic and Differential Geometry},
+  publisher = {Université de Grenoble I},
+  year = {2012},
+  note = {Online book, version of 2012},
+  url = {https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf}
+}
+
+% Algebraic geometry and commutative algebra
+
+@Book{Har77,
+  author = {Hartshorne, Robin},
+  title = {Algebraic Geometry},
+  series = {Graduate Texts in Mathematics},
+  volume = {52},
+  publisher = {Springer},
+  year = {1977},
+  doi = {10.1007/978-1-4757-3849-0}
+}
+
+@Book{Mat89,
+  author = {Matsumura, Hideyuki},
+  title = {Commutative Ring Theory},
+  series = {Cambridge Studies in Advanced Mathematics},
+  volume = {8},
+  publisher = {Cambridge University Press},
+  year = {1989},
+  doi = {10.1017/CBO9781139171762}
+}
+
+@Book{AM69,
+  author = {Atiyah, Michael F. and Macdonald, Ian G.},
+  title = {Introduction to Commutative Algebra},
+  publisher = {Addison-Wesley},
+  year = {1969}
+}
+
+@Book{Wat09,
+  author = {Watanabe, Sumio},
+  title = {Algebraic Geometry and Statistical Learning Theory},
+  series = {Cambridge Monographs on Applied and Computational Mathematics},
+  volume = {25},
+  publisher = {Cambridge University Press},
+  year = {2009},
+  doi = {10.1017/CBO9780511800474}
+}

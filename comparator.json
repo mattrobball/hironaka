@@ -1,0 +1,30 @@
+{
+    "challenge_module": "Challenge",
+    "solution_module": "Hironaka",
+    "theorem_names": [
+        "AlgebraicGeometry.exists_blowUpSequence_ord_weakTransformSeq_lt",
+        "AlgebraicGeometry.exists_blowUpSequence_weakTransformSeq_eq_top",
+        "AlgebraicGeometry.exists_blowUpSequence_forall_exists_stalkIdeal_weakTransformSeq_eq_top",
+        "AlgebraicGeometry.exists_functorial_principalization",
+        "AlgebraicGeometry.exists_blowUpSequence_isInvertible_isSncBoundary_radical_comap",
+        "AlgebraicGeometry.exists_functorial_resolution",
+        "AlgebraicGeometry.exists_strong_resolution",
+        "AlgebraicGeometry.exists_support_eq_singularLocus_isRegular_blowUp",
+        "AlgebraicGeometry.exists_dense_isIso_restrict_isRegular_blowUp",
+        "AlgebraicGeometry.exists_functorial_embeddedDesingularization",
+        "AnalyticManifold.exists_extensionCompatibleFamily_weakTransformSeq_eq_top",
+        "AnalyticManifold.exists_extensionCompatibleFamily_isNormalCrossingsDivisor_jacobianIdeal_mul_pullback",
+        "AnalyticManifold.exists_functorial_principalization",
+        "AnalyticManifold.exists_embeddedDesingularization",
+        "AnalyticSpace.exists_functorial_resolution",
+        "AnalyticSpace.exists_surjective_resolution_of_isReduced",
+        "AlgebraicGeometry.exists_isBlowUpAlong_smooth",
+        "exists_proper_analytic_monomialization"
+    ],
+    "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+    ],
+    "enable_nanoda": false
+}

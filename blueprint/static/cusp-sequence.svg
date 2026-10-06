@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 978 376" width="978" height="376">
+<rect width="978" height="376" fill="#fffdf8"/>
+<rect x="20" y="58" width="200" height="200" fill="#f7f5ee" stroke="#d6d1c4" rx="6"/>
+<rect x="266" y="58" width="200" height="200" fill="#f7f5ee" stroke="#d6d1c4" rx="6"/>
+<rect x="512" y="58" width="200" height="200" fill="#f7f5ee" stroke="#d6d1c4" rx="6"/>
+<rect x="758" y="58" width="200" height="200" fill="#f7f5ee" stroke="#d6d1c4" rx="6"/>
+<text x="120.0" y="28.0" font-size="14" text-anchor="middle" fill="#222" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">stage 0: the cusp</text>
+<text x="366.0" y="28.0" font-size="14" text-anchor="middle" fill="#222" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">blow up the origin</text>
+<text x="612.0" y="28.0" font-size="14" text-anchor="middle" fill="#222" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">blow up the tangency</text>
+<text x="858.0" y="28.0" font-size="14" text-anchor="middle" fill="#222" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">blow up the triple point</text>
+<text x="120.0" y="46.0" font-size="12" text-anchor="middle" fill="#666" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">coordinates (x, y)</text>
+<text x="366.0" y="46.0" font-size="12" text-anchor="middle" fill="#666" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">chart y = xv</text>
+<text x="612.0" y="46.0" font-size="12" text-anchor="middle" fill="#666" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">chart x = vw</text>
+<text x="858.0" y="46.0" font-size="12" text-anchor="middle" fill="#666" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">chart w = vs</text>
+<path d="M 258.0,158.0 L 228.0,158.0" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M 235.0,153.0 L 228.0,158.0 L 235.0,163.0" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/>
+<text x="243.0" y="150.0" font-size="13" text-anchor="middle" fill="#555" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">π₀</text>
+<path d="M 504.0,158.0 L 474.0,158.0" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M 481.0,153.0 L 474.0,158.0 L 481.0,163.0" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/>
+<text x="489.0" y="150.0" font-size="13" text-anchor="middle" fill="#555" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">π₁</text>
+<path d="M 750.0,158.0 L 720.0,158.0" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M 727.0,153.0 L 720.0,158.0 L 727.0,163.0" fill="none" stroke="#555" stroke-width="1.6" stroke-linecap="round"/>
+<text x="735.0" y="150.0" font-size="13" text-anchor="middle" fill="#555" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">π₂</text>
+<path d="M 33.6,158.0 L 206.4,158.0" fill="none" stroke="#bbb" stroke-width="1" stroke-linecap="round"/>
+<path d="M 120.0,244.4 L 120.0,71.6" fill="none" stroke="#bbb" stroke-width="1" stroke-linecap="round"/>
+<text x="208.4" y="174.0" font-size="12" text-anchor="end" fill="#777" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">x</text>
+<text x="130.0" y="75.6" font-size="12" text-anchor="start" fill="#777" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">y</text>
+<path d="M 199.2,74.9 L 197.9,77.0 L 196.6,79.1 L 195.2,81.1 L 193.9,83.1 L 192.6,85.1 L 191.3,87.1 L 190.0,89.0 L 188.6,91.0 L 187.3,92.9 L 186.0,94.8 L 184.7,96.7 L 183.4,98.6 L 182.0,100.4 L 180.7,102.2 L 179.4,104.0 L 178.1,105.8 L 176.8,107.6 L 175.4,109.4 L 174.1,111.1 L 172.8,112.8 L 171.5,114.5 L 170.2,116.1 L 168.8,117.8 L 167.5,119.4 L 166.2,121.0 L 164.9,122.6 L 163.6,124.1 L 162.2,125.6 L 160.9,127.2 L 159.6,128.6 L 158.3,130.1 L 157.0,131.5 L 155.6,132.9 L 154.3,134.3 L 153.0,135.7 L 151.7,137.0 L 150.4,138.3 L 149.0,139.6 L 147.7,140.8 L 146.4,142.0 L 145.1,143.2 L 143.8,144.4 L 142.4,145.5 L 141.1,146.6 L 139.8,147.6 L 138.5,148.6 L 137.2,149.6 L 135.8,150.6 L 134.5,151.5 L 133.2,152.3 L 131.9,153.2 L 130.6,154.0 L 129.2,154.7 L 127.9,155.4 L 126.6,156.0 L 125.3,156.6 L 124.0,157.1 L 122.6,157.5 L 121.3,157.8 L 120.0,158.0 L 120.0,158.0 L 121.3,158.2 L 122.6,158.5 L 124.0,158.9 L 125.3,159.4 L 126.6,160.0 L 127.9,160.6 L 129.2,161.3 L 130.6,162.0 L 131.9,162.8 L 133.2,163.7 L 134.5,164.5 L 135.8,165.4 L 137.2,166.4 L 138.5,167.4 L 139.8,168.4 L 141.1,169.4 L 142.4,170.5 L 143.8,171.6 L 145.1,172.8 L 146.4,174.0 L 147.7,175.2 L 149.0,176.4 L 150.4,177.7 L 151.7,179.0 L 153.0,180.3 L 154.3,181.7 L 155.6,183.1 L 157.0,184.5 L 158.3,185.9 L 159.6,187.4 L 160.9,188.8 L 162.2,190.4 L 163.6,191.9 L 164.9,193.4 L 166.2,195.0 L 167.5,196.6 L 168.8,198.2 L 170.2,199.9 L 171.5,201.5 L 172.8,203.2 L 174.1,204.9 L 175.4,206.6 L 176.8,208.4 L 178.1,210.2 L 179.4,212.0 L 180.7,213.8 L 182.0,215.6 L 183.4,217.4 L 184.7,219.3 L 186.0,221.2 L 187.3,223.1 L 188.6,225.0 L 190.0,227.0 L 191.3,228.9 L 192.6,230.9 L 193.9,232.9 L 195.2,234.9 L 196.6,236.9 L 197.9,239.0 L 199.2,241.1" fill="none" stroke="#1e8449" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="120.0" cy="158.0" r="4" fill="#222"/>
+<text x="159.6" y="82.4" font-size="15" text-anchor="middle" fill="#1e8449" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">C</text>
+<path d="M 279.6,158.0 L 452.4,158.0" fill="none" stroke="#bbb" stroke-width="1" stroke-linecap="round"/>
+<path d="M 366.0,244.4 L 366.0,71.6" fill="none" stroke="#bbb" stroke-width="1" stroke-linecap="round"/>
+<text x="454.4" y="174.0" font-size="12" text-anchor="end" fill="#777" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">x</text>
+<text x="376.0" y="75.6" font-size="12" text-anchor="start" fill="#777" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">v</text>
+<path d="M 366.0,244.4 L 366.0,71.6" fill="none" stroke="#c0392b" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M 445.4,233.6 L 440.2,231.1 L 435.1,228.6 L 430.3,226.0 L 425.6,223.5 L 421.1,221.0 L 416.8,218.5 L 412.7,216.0 L 408.7,213.4 L 404.9,210.9 L 401.3,208.4 L 397.8,205.9 L 394.6,203.4 L 391.5,200.8 L 388.6,198.3 L 385.8,195.8 L 383.3,193.3 L 380.9,190.8 L 378.7,188.2 L 376.7,185.7 L 374.8,183.2 L 373.1,180.7 L 371.6,178.2 L 370.3,175.6 L 369.2,173.1 L 368.2,170.6 L 367.4,168.1 L 366.8,165.6 L 366.4,163.0 L 366.1,160.5 L 366.0,158.0 L 366.1,155.5 L 366.4,153.0 L 366.8,150.4 L 367.4,147.9 L 368.2,145.4 L 369.2,142.9 L 370.3,140.4 L 371.6,137.8 L 373.1,135.3 L 374.8,132.8 L 376.7,130.3 L 378.7,127.8 L 380.9,125.2 L 383.3,122.7 L 385.8,120.2 L 388.6,117.7 L 391.5,115.2 L 394.6,112.6 L 397.8,110.1 L 401.3,107.6 L 404.9,105.1 L 408.7,102.6 L 412.7,100.0 L 416.8,97.5 L 421.1,95.0 L 425.6,92.5 L 430.3,90.0 L 435.1,87.4 L 440.2,84.9 L 445.4,82.4" fill="none" stroke="#1e8449" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="366.0" cy="158.0" r="4" fill="#222"/>
+<text x="344.4" y="84.6" font-size="14" text-anchor="middle" fill="#c0392b" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">E₁</text>
+<text x="434.4" y="104.0" font-size="14" text-anchor="middle" fill="#1e8449" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">C₁</text>
+<path d="M 525.6,158.0 L 698.4,158.0" fill="none" stroke="#bbb" stroke-width="1" stroke-linecap="round"/>
+<path d="M 612.0,244.4 L 612.0,71.6" fill="none" stroke="#bbb" stroke-width="1" stroke-linecap="round"/>
+<text x="700.4" y="174.0" font-size="12" text-anchor="end" fill="#777" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">v</text>
+<text x="622.0" y="75.6" font-size="12" text-anchor="start" fill="#777" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">w</text>
+<path d="M 612.0,244.4 L 612.0,71.6" fill="none" stroke="#2e6fbd" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M 525.6,158.0 L 698.4,158.0" fill="none" stroke="#c0392b" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M 540.0,230.0 L 684.0,86.0" fill="none" stroke="#1e8449" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="612.0" cy="158.0" r="4" fill="#222"/>
+<text x="590.4" y="84.6" font-size="14" text-anchor="middle" fill="#2e6fbd" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">E₂</text>
+<text x="540.0" y="147.9" font-size="14" text-anchor="middle" fill="#c0392b" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">E₁</text>
+<text x="680.4" y="106.2" font-size="14" text-anchor="middle" fill="#1e8449" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">C₂</text>
+<path d="M 772.0,158.0 L 944.0,158.0" fill="none" stroke="#8e44ad" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M 802.0,96.0 L 802.0,220.0" fill="none" stroke="#c0392b" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="802.0" cy="158.0" r="3" fill="#222"/>
+<text x="802.0" y="88.0" font-size="14" text-anchor="middle" fill="#c0392b" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">E₁</text>
+<path d="M 858.0,96.0 L 858.0,220.0" fill="none" stroke="#1e8449" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="858.0" cy="158.0" r="3" fill="#222"/>
+<text x="858.0" y="88.0" font-size="14" text-anchor="middle" fill="#1e8449" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">C₃</text>
+<path d="M 914.0,96.0 L 914.0,220.0" fill="none" stroke="#2e6fbd" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="914.0" cy="158.0" r="3" fill="#222"/>
+<text x="914.0" y="88.0" font-size="14" text-anchor="middle" fill="#2e6fbd" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">E₂</text>
+<text x="942.0" y="150.0" font-size="14" text-anchor="end" fill="#8e44ad" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">E₃</text>
+<text x="802.0" y="238.0" font-size="11" text-anchor="middle" fill="#777" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">s = 0</text>
+<text x="858.0" y="238.0" font-size="11" text-anchor="middle" fill="#777" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">s = 1</text>
+<text x="914.0" y="238.0" font-size="11" text-anchor="middle" fill="#777" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif" font-style="italic">s = ∞</text>
+<text x="120.0" y="282.0" font-size="14" text-anchor="middle" fill="#222" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">f = y² − x³</text>
+<text x="120.0" y="302.0" font-size="13" text-anchor="middle" fill="#b03a2e" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">singular point</text>
+<text x="366.0" y="282.0" font-size="14" text-anchor="middle" fill="#222" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">f = x²(v² − x)</text>
+<text x="366.0" y="302.0" font-size="13" text-anchor="middle" fill="#b9770e" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">C₁ smooth, tangent to E₁</text>
+<text x="612.0" y="282.0" font-size="14" text-anchor="middle" fill="#222" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">f = v³w²(v − w)</text>
+<text x="612.0" y="302.0" font-size="13" text-anchor="middle" fill="#b9770e" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">three curves through a point</text>
+<text x="858.0" y="282.0" font-size="14" text-anchor="middle" fill="#222" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">f = v⁶s²(1 − s)</text>
+<text x="858.0" y="302.0" font-size="13" text-anchor="middle" fill="#1e8449" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">simple normal crossings</text>
+<text x="489.0" y="354.0" font-size="13" text-anchor="middle" fill="#444" font-family="STIX Two Text, Cambria Math, DejaVu Serif, Georgia, serif">total transform of C in the last stage:  6E₃ + 3E₂ + 2E₁ + C₃   (multiplicities read off the exponents)</text>
+</svg>

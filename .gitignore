@@ -1,0 +1,11 @@
+# Lake build outputs and packages
+.lake/
+# Created by `lake exe cache get` when no home directory is available
+.cache
+# Python bytecode of the scripts
+__pycache__/
+# Output of scripts/build_docs.py
+/docbuild/site/
+
+# Output of scripts/build_site.py
+/_site/

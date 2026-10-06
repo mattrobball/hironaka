@@ -1,0 +1,1213 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+
+version: "v0.4"
+
+project:
+  name: "hironaka: Hironaka's resolution of singularities in characteristic zero, in Lean 4"
+  description: >
+    A Lean 4 formalization, over Mathlib, of resolution of singularities in characteristic zero:
+    Hironaka's Main Theorems I (with its weak form), II and II(N) and his Corollaries 1 and 3 to
+    Main Theorem II for algebraic schemes over a field of characteristic zero, Kollár's strong
+    resolution of a variety and his functorial principalization and resolution (his Theorems 27,
+    35 and 36), Włodarczyk's embedded desingularization with smooth centres, Hironaka's
+    real-analytic principalization (Main Theorem II″(N)), the Bierstone–Milman principalization
+    with the Jacobian clause, Włodarczyk's functorial locally finite principalization and his
+    embedded desingularization of analytic subspaces of analytic manifolds, all four in
+    Włodarczyk's compatible-family form, and the resolution of reduced real- and complex-analytic
+    spaces (Kollár's Theorem 45, with its surjective form over ℂ); and two classical consequences
+    stated with Mathlib imports only, Hironaka's Main Theorem I as the resolution of a variety by a
+    single blow-up (with two definitions Mathlib lacks, effective Cartier ideal sheaves and the
+    blow-up as a universal property) and the local monomialization of a real-analytic function
+    (Atiyah's Resolution Theorem) with the Jacobian clause of Bierstone–Milman. The proofs follow the
+    order-reduction method of Włodarczyk and Kollár on schemes and re-run it on real- and
+    complex-analytic manifolds.
+  authors:
+    - "Claude agents (Anthropic Claude Code sessions operated by Resolution)"
+    - "Chris Elliott (Resolution; direction and audit of the formalization campaign)"
+    - "Billy Snikkers (Resolution; refactoring and release preparation after the campaign)"
+    - "Adam Newgas (Resolution; refactoring and release preparation after the campaign)"
+  responsible_maintainers:
+    - "Resolution Alignment"
+  license: "Apache-2.0 (LICENSE, Copyright (c) 2026 Resolution)"
+
+sources:
+  - title: >-
+      Resolution of singularities of an algebraic variety over a field of characteristic zero. I, II
+    authors: ["Heisuke Hironaka"]
+    id: >-
+      doi:10.2307/1970486 and doi:10.2307/1970547 (Annals of Mathematics (2) 79 (1964), 109–203 and
+      205–326)
+    type: "article"
+    location: >
+      Main Theorem I, also in Mathlib's terms, and the weak form stated in the paragraph after it
+      (p. 132); Main Theorem II (pp. 142–143) with Corollary 1 (pp. 143–144) and Corollary 3
+      (p. 146); Main Theorem II(N) (p. 176); Main Theorem II″(N) (pp. 158–159), whose conclusion is
+      that of Main Theorem II′(N) (p. 156).
+    relationship: "formalizes"
+    note: >
+      The theorems are formalized over a field of characteristic zero, as Main Theorems I and II and
+      Corollaries 1 and 3 are printed. Hironaka's more general base, a local ring of his class ℬ (p.
+      151; defined p. 161), over which Main Theorem II(N) is stated (p. 162), is not formalized.
+    author_endorsement: "not-contacted"
+  - title: "Lectures on Resolution of Singularities"
+    authors: ["János Kollár"]
+    id: >-
+      Annals of Mathematics Studies 166, Princeton University Press, 2007 (isbn:9780691129235);
+      Chapter 3 circulated as "Resolution of singularities – Seattle lecture", arXiv:math/0508332v3
+    type: "book"
+    location: >
+      Theorem 27 (strong resolution of a quasi-projective variety), Theorem 35 (functorial
+      principalization), Theorem 36 (functorial resolution), Theorem 45 (resolution of analytic
+      spaces; over ℂ, its clauses (1)–(4) in a surjective form); the proofs follow Theorems 68 and
+      69 (order reduction), item 72, Proposition 37 and Lemma 39; on analytic manifolds the
+      commutation with closed embeddings (34.3, Theorem 35 (5)) follows Claim 71.2 from Theorem
+      107 (3) at the mark 1 and Theorem 103 (3), along flags (item 108).
+    relationship: "formalizes"
+    note: >
+      The text consulted is the arXiv version, and item numbers follow it; the book's "3.N"
+      numbering was not checked, and its Chapters 1–2 were not consulted.
+    author_endorsement: "not-contacted"
+  - title: "Simple Hironaka resolution in characteristic zero"
+    authors: ["Jarosław Włodarczyk"]
+    id: >-
+      doi:10.1090/S0894-0347-05-00493-5 (Journal of the American Mathematical Society 18 (2005),
+      779–822); arXiv:math/0401401
+    type: "article"
+    location: "Theorem 1.0.2 (embedded desingularization with smooth centres); §4.6–4.7"
+    relationship: "formalizes"
+    note: >
+      Also the source of the method: the homogenization (tuning) of ideals that makes the
+      order-reduction induction run, followed through Kollár's presentation.
+    author_endorsement: "not-contacted"
+  - title: "Resolution of singularities of analytic spaces"
+    authors: ["Jarosław Włodarczyk"]
+    id: >-
+      Proceedings of the 15th Gökova Geometry–Topology Conference (2008), International Press,
+      2009, 31–63; https://gokovagt.org/proceedings/2008/ggt08-wlodarczyk.pdf
+    type: "article"
+    location: >
+      Theorem 2.0.1 (resolution), Theorem 2.0.2 (locally finite embedded desingularization),
+      Theorem 2.0.3 (locally finite principalization) with the extensions of Definition 3.2.6, its
+      commutation with local analytic isomorphisms in the form of Theorem 3.5.1 (2) (with
+      Proposition 3.4.1 and Definition 3.4.2) and its commutation with embeddings of ambient
+      varieties in the form of Kollár's commutation with closed embeddings (Kollár 2007, 34.3 and
+      Theorem 35 (5)); Lemma 4.0.3 (the principalization is an isomorphism off the cosupport); §4
+      (gluing over relatively compact opens)
+    relationship: "formalizes"
+    note: >
+      Also the source of the compatible-family form in which the analytic main theorems are stated.
+    author_endorsement: "not-contacted"
+  - title: >-
+      Canonical desingularization in characteristic zero by blowing up the maximum strata of a
+      local invariant
+    authors: ["Edward Bierstone", "Pierre D. Milman"]
+    id: >-
+      doi:10.1007/s002220050141 (Inventiones Mathematicae 128 (1997), 207–302); Chapter I as
+      arXiv:alg-geom/9508005
+    type: "article"
+    location: "Theorem 1.10 and the sentence following it; the category of spaces of §3"
+    relationship: "formalizes"
+    note: >
+      Only Chapter I (the arXiv text) was consulted.
+    author_endorsement: "not-contacted"
+  - title: "Resolution of singularities and division of distributions"
+    authors: ["Michael F. Atiyah"]
+    id: >-
+      doi:10.1002/cpa.3160230202 (Communications on Pure and Applied Mathematics 23 (1970),
+      145–150)
+    type: "article"
+    location: "Resolution Theorem, p. 147"
+    relationship: "formalizes"
+    note: >
+      The source of the local monomialization of a real-analytic function, stated with Mathlib's
+      definitions.
+    author_endorsement: "not-contacted"
+  - title: "Meromorphic property of the functions P^λ"
+    authors: ["I. N. Bernshtein", "S. I. Gel'fand"]
+    id: >-
+      doi:10.1007/BF01078276 (Functional Analysis and Its Applications 3 (1969), 68–69)
+    type: "article"
+    relationship: "background"
+    note: >-
+      Lemma 1, the monomialization of a regular function on a real algebraic manifold, found
+      independently of Atiyah.
+  - title: "Blowups and resolution"
+    authors: ["Herwig Hauser"]
+    id: >-
+      in: The Resolution of Singular Algebraic Varieties, Clay Mathematics Proceedings 20, American
+      Mathematical Society, 2014, 1–80; arXiv:1404.1041
+    type: "article"
+    relationship: "background"
+    note: >-
+      The elementary theory of blow-ups and the worked examples of HironakaExamples.
+  - title: "The Stacks Project"
+    authors: ["The Stacks Project Authors"]
+    id: "https://stacks.math.columbia.edu"
+    type: "web post"
+    relationship: "background"
+    note: "Cited by tag for the scheme-theoretic facts the proofs use."
+  - title: "Semianalytic and subanalytic sets"
+    authors: ["Edward Bierstone", "Pierre D. Milman"]
+    id: "doi:10.1007/BF02699126 (Publications Mathématiques de l'IHÉS 67 (1988), 5–42)"
+    type: "article"
+    location: >
+      Definition 4.1 (blowing up), p. 23 and Definition 4.6 (germs and their order), the proof of
+      Theorem 4.4
+    relationship: "background"
+    note: >
+      The blowing-up of an analytic manifold along a closed submanifold, in the charts of
+      Definition 4.1, which the manifold blow-ups of the library follow, and the local algebra of
+      analytic germs (Weierstrass preparation in a distinguished last coordinate) in the form the
+      proof of Theorem 4.4 uses.
+
+classification:
+  arxiv: ["math.AG", "math.CV"]
+  msc2020: ["14E15", "32S45", "32C05", "14B05"]
+
+status:
+  scope: >
+    The main theorems are the theorems of comparator.json. Each is stated at the end of the module
+    of `Hironaka` that proves it, with the same statement and docstring as its copy in the Challenge
+    files (Challenge.lean and the modules under Challenge/), which import only the definition
+    modules, and leanprover/comparator checks that the library proves them. All are proved. Not
+    proved: Hironaka's Main Theorem I in the strong form, Main Theorem I* and the inductive Main
+    Theorem I(n) (normal flatness along the centres, which the order-reduction route does not
+    produce); Main Theorem I for a reduced X that is not irreducible, as his Introduction (p. 112)
+    describes it; the real-analytic Main Theorem I″(n); the complex-analytic Main Theorems I′(n) and
+    II′(N), stated for complex spaces admitting a projective morphism to a complex Stein space (pp.
+    155, 156), and the local Main Theorems I′ and II′ (pp. 151–152), out of scope; Corollary 2 and
+    the three consequences of Corollary 1 (pp. 144–145). Neither library contains a `sorry`; the
+    only `sorry`s in the repository are the deliberate bodies of the Challenge modules. Every
+    constant of both libraries depends on no axiom beyond propext, Classical.choice and Quot.sound.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  # BEGIN GENERATED status.main_results: do not edit
+  main_results:
+    - declaration: "AlgebraicGeometry.exists_blowUpSequence_ord_weakTransformSeq_lt"
+      file: "Hironaka/Resolution/Algebraic/Hir64/ComponentwiseMainTheorems.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Scheme/BlowUpSequence/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/IdealSheaf/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+        - "Hironaka/Scheme/Snc/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_blowUpSequence_weakTransformSeq_eq_top"
+      file: "Hironaka/Resolution/Algebraic/Hir64/ComponentwiseMainTheorems.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Scheme/BlowUpSequence/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/IdealSheaf/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+        - "Hironaka/Scheme/Snc/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_blowUpSequence_forall_exists_stalkIdeal_weakTransformSeq_eq_top"
+      file: "Hironaka/Resolution/Algebraic/Hir64/ComponentwiseCorollaries.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Scheme/BlowUpSequence/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/IdealSheaf/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_functorial_principalization"
+      file: "Hironaka/Resolution/Algebraic/Kol07/Thm35/Principalization/FunctorClauses.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/BlowUpMap/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Scheme/BlowUpSequence/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/IdealSheaf/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+        - "Hironaka/Scheme/Snc/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_blowUpSequence_isInvertible_isSncBoundary_radical_comap"
+      file: "Hironaka/Resolution/Algebraic/Hir64/ComponentwiseCorollaries.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/BlowUpSequence/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/IdealSheaf/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+        - "Hironaka/Scheme/Snc/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_functorial_resolution"
+      file: "Hironaka/Resolution/Algebraic/Kol07/Thm36/Theorem36.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Algebra/SymmetricAlgebra/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/BlowUpMap/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/BlowUpSequence/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/IdealSheaf/Defs.lean"
+        - "Hironaka/Scheme/Modules/Defs.lean"
+        - "Hironaka/Scheme/ProjectiveBundle/Affine/Defs.lean"
+        - "Hironaka/Scheme/ProjectiveBundle/Defs.lean"
+        - "Hironaka/Scheme/ProjectiveBundle/Functor/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+        - "Hironaka/Scheme/Snc/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_strong_resolution"
+      file: "Hironaka/Resolution/Algebraic/Kol07/Thm36/Theorem36.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Algebra/SymmetricAlgebra/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/BlowUpSequence/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/IdealSheaf/Defs.lean"
+        - "Hironaka/Scheme/Modules/Defs.lean"
+        - "Hironaka/Scheme/ProjectiveBundle/Affine/Defs.lean"
+        - "Hironaka/Scheme/ProjectiveBundle/Defs.lean"
+        - "Hironaka/Scheme/ProjectiveBundle/Functor/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+        - "Hironaka/Scheme/Snc/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_support_eq_singularLocus_isRegular_blowUp"
+      file: "Hironaka/Resolution/Algebraic/Hir64/MainTheoremI.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_dense_isIso_restrict_isRegular_blowUp"
+      file: "Hironaka/Resolution/Algebraic/Hir64/MainTheoremI.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_functorial_embeddedDesingularization"
+      file: "Hironaka/Resolution/Algebraic/Wlo05/EmbeddedFunctorClauses.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Algebra/RegularSmooth/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/AffineBlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/BlowUpMap/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Rees/Defs.lean"
+        - "Hironaka/Scheme/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Scheme/BlowUpSequence/Defs.lean"
+        - "Hironaka/Scheme/Defs.lean"
+        - "Hironaka/Scheme/IdealSheaf/Defs.lean"
+        - "Hironaka/Scheme/Resolution/Defs.lean"
+        - "Hironaka/Scheme/Snc/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AnalyticManifold.exists_extensionCompatibleFamily_weakTransformSeq_eq_top"
+      file: "Hironaka/Resolution/Analytic/Wlo09/HironakaAssembly.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Manifold/AnalyticManifold/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/CompatibleFamily/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/Defs.lean"
+        - "Hironaka/Manifold/IdealSheaf/Defs.lean"
+        - "Hironaka/Manifold/Resolution/Defs.lean"
+        - "Hironaka/Manifold/Snc/Defs.lean"
+        - "Hironaka/Manifold/StructureSheaf/Defs.lean"
+        - "Hironaka/Manifold/Submanifold/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AnalyticManifold.exists_extensionCompatibleFamily_isNormalCrossingsDivisor_jacobianIdeal_mul_pullback"
+      file: "Hironaka/Resolution/Analytic/BM97/JacobianAssembly.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Manifold/AnalyticManifold/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/CompatibleFamily/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/Defs.lean"
+        - "Hironaka/Manifold/IdealSheaf/Defs.lean"
+        - "Hironaka/Manifold/Jacobian/Defs.lean"
+        - "Hironaka/Manifold/Resolution/Defs.lean"
+        - "Hironaka/Manifold/Snc/Defs.lean"
+        - "Hironaka/Manifold/StructureSheaf/Defs.lean"
+        - "Hironaka/Manifold/Submanifold/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AnalyticManifold.exists_functorial_principalization"
+      file: "Hironaka/Resolution/Analytic/Wlo09/FunctorialPrincipalization.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Algebra/Local/Defs.lean"
+        - "Hironaka/Manifold/AnalyticManifold/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/CompatibleFamily/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/Defs.lean"
+        - "Hironaka/Manifold/IdealSheaf/Defs.lean"
+        - "Hironaka/Manifold/Resolution/Defs.lean"
+        - "Hironaka/Manifold/Snc/Defs.lean"
+        - "Hironaka/Manifold/StructureSheaf/Defs.lean"
+        - "Hironaka/Manifold/Submanifold/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AnalyticManifold.exists_embeddedDesingularization"
+      file: "Hironaka/Resolution/Analytic/Wlo09/EmbeddedDesingularization.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Manifold/AnalyticManifold/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/CompatibleFamily/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/Defs.lean"
+        - "Hironaka/Manifold/IdealSheaf/Defs.lean"
+        - "Hironaka/Manifold/Resolution/Defs.lean"
+        - "Hironaka/Manifold/Snc/Defs.lean"
+        - "Hironaka/Manifold/StructureSheaf/Defs.lean"
+        - "Hironaka/Manifold/Submanifold/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AnalyticSpace.exists_functorial_resolution"
+      file: "Hironaka/Resolution/Analytic/Kol07Thm45/ResolutionAssembly.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/AnalyticSpace/ClosedSubspace/Defs.lean"
+        - "Hironaka/AnalyticSpace/Defs.lean"
+        - "Hironaka/AnalyticSpace/KSpace/Defs.lean"
+        - "Hironaka/AnalyticSpace/Manifold/Defs.lean"
+        - "Hironaka/AnalyticSpace/Quotient/Defs.lean"
+        - "Hironaka/AnalyticSpace/Resolution/Defs.lean"
+        - "Hironaka/AnalyticSpace/Restrict/Defs.lean"
+        - "Hironaka/Manifold/AnalyticManifold/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Manifold/DisjointUnion/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/Defs.lean"
+        - "Hironaka/Manifold/IdealSheaf/Defs.lean"
+        - "Hironaka/Manifold/StructureSheaf/Defs.lean"
+        - "Hironaka/Manifold/Submanifold/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AnalyticSpace.exists_surjective_resolution_of_isReduced"
+      file: "Hironaka/Resolution/Analytic/Kol07Thm45/ResolutionAssembly.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/AnalyticSpace/ClosedSubspace/Defs.lean"
+        - "Hironaka/AnalyticSpace/Defs.lean"
+        - "Hironaka/AnalyticSpace/KSpace/Defs.lean"
+        - "Hironaka/AnalyticSpace/Manifold/Defs.lean"
+        - "Hironaka/AnalyticSpace/Quotient/Defs.lean"
+        - "Hironaka/AnalyticSpace/Resolution/Defs.lean"
+        - "Hironaka/AnalyticSpace/Restrict/Defs.lean"
+        - "Hironaka/Manifold/AnalyticManifold/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Defs.lean"
+        - "Hironaka/Manifold/BlowUp/Transform/Defs.lean"
+        - "Hironaka/Manifold/DisjointUnion/Defs.lean"
+        - "Hironaka/Manifold/FiniteSuccession/Defs.lean"
+        - "Hironaka/Manifold/IdealSheaf/Defs.lean"
+        - "Hironaka/Manifold/StructureSheaf/Defs.lean"
+        - "Hironaka/Manifold/Submanifold/Defs.lean"
+      literature_dependencies: []
+    - declaration: "AlgebraicGeometry.exists_isBlowUpAlong_smooth"
+      file: "Hironaka/Resolution/Standard/Algebraic.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Scheme/BlowUp/BlowUpAlong/Defs.lean"
+      literature_dependencies: []
+    - declaration: "exists_proper_analytic_monomialization"
+      file: "Hironaka/Resolution/Standard/Analytic.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      statement_vocabulary:
+        - "Hironaka/Manifold/MonomialAt/Defs.lean"
+      literature_dependencies: []
+  # END GENERATED status.main_results
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["claude-fable-5-1", "claude-opus-4-8", "gpt-6-astra"]
+      framework: "Claude Code"
+      tool_setup: >
+        Formalization campaign operated by Chris Elliott (Resolution): an orchestrator session
+        dispatching parallel work lanes (statement, proof and reader/review lanes, each in its own
+        git worktree) over a step-by-step plan written from the sources, with gate scripts and the
+        process material (plan, decision register, ledger) kept in the repository during the
+        campaign and removed at release. The main theorems were fixed as sorried statements first
+        and the proofs connected to them afterwards, each connection checked by an elaborated-type
+        comparison. GPT-6 Astra was consulted on counterexamples and proof write-ups. Claude Fable
+        5.1 wrote the Lean. The main campaign was followed by the release clean-up and, on
+        2026-09-29, the degenerate case and the dimension-free form of Main Theorems II and II(N)
+        and Corollaries 1 and 3, and the coherence theorem for extension-compatible families.
+      cost:
+        wall_time: "2026-09-04 to 2026-09-12, 2026-09-22 to 2026-09-23, 2026-09-29"
+        hardware: >
+          One virtual machine (Nebius; 32 vCPUs on an AMD EPYC Genoa processor, 125 GiB of memory,
+          1.3 TB of disk, no GPU; Ubuntu 24.04), running the orchestrator and lane sessions;
+          models through the Anthropic and OpenAI APIs.
+        tokens: >
+          Claude API tokens of the Claude Code sessions on the machine, summed from the session
+          transcripts. Main campaign, 2026-09-04 to 2026-09-16:
+          286 sessions, 160,899 assistant messages, 87.3 G input tokens (79.3 G cache reads, 8.1 G
+          cache writes, 3.9 M uncached) and 283 M output tokens, of which one lane on
+          claude-opus-4-8 accounts for 1.9 G input and 6 M output. Release clean-up, 2026-09-22 to
+          2026-09-23: 121 sessions, 6.0 G input (5.6 G cache reads) and 22.7 M output. The three
+          changes of 2026-09-29: four sessions, 129 M input and 1.1 M output. In total 93.4 G
+          input and 307 M output tokens over 411 sessions. Not counted: the GPT-6 Astra
+          consultations through the OpenAI API, and the owner's own sessions on another machine.
+      prompting_notes: >
+        Owner-directed: the owner wrote the high-level plan and made the decisions where the sources
+        disagreed or were incomplete; the agents wrote the atomic plan, the statements, the proofs
+        and the reviews. Every departure from a printed statement was recorded at the time and is
+        reproduced in the docstrings and in alignment.statements.
+    - method: "agent"
+      models: ["claude-opus-5-5"]
+      framework: "Claude Code"
+      tool_setup: >
+        Refactoring and release preparation after the formalization campaign, operated by Billy
+        Snikkers (Resolution) together with the sessions of Adam Newgas below. Moves of code were
+        checked by comparing the elaborated types of the main theorems before and after.
+      cost:
+        wall_time: "2026-09-23 to 2026-09-25, 2026-09-29 to 2026-10-06"
+        hardware: >
+          One virtual machine (Nebius; 32 vCPUs on an AMD EPYC Genoa processor, 125 GiB of memory,
+          2 TB of disk, no GPU; Ubuntu 24.04), running the Claude Code sessions and their subagents.
+        tokens: >
+          Claude API tokens of the Claude Code sessions, summed from the session transcripts
+          (subagents included), to 2026-10-06: 3 sessions, 20,818
+          assistant messages, 6.26 G input tokens (6.15 G cache reads, 111 M cache writes, 42 k
+          uncached) and 5.22 M output tokens.
+    - method: "agent"
+      models: ["claude-fable-5-1"]
+      framework: "Claude Code"
+      tool_setup: >
+        Refactoring and release preparation after the formalization campaign, operated by Adam
+        Newgas (Resolution) together with the sessions of Billy Snikkers above.
+      cost:
+        wall_time: "2026-09-15 to 2026-10-05"
+        hardware: >
+          One virtual machine (Nebius; 96 vCPUs on an AMD EPYC Genoa processor, 377 GiB of memory,
+          1.3 TB of disk, no GPU; Ubuntu 24.04), running the Claude Code sessions and their subagents.
+        tokens: >
+          Claude API tokens of the Claude Code sessions, summed from the session transcripts
+          (subagents included), to 2026-10-05: 43 sessions, 5,609 assistant messages, 1.14 G input
+          tokens (1.08 G cache reads, 60.1 M cache writes, 150 k uncached) and 4.09 M output tokens.
+  notes: >
+    Agent-written Lean under human direction throughout. The proofs were written by the agents
+    following the sources' arguments; the humans chose the sources and the route, fixed the
+    statements of record, ruled on the departures, and audited the statements against the sources.
+    No proof was written by hand.
+
+fidelity:
+  divergences: >
+    Listed per theorem, in the `note` of each entry of alignment.statements, as in the section
+    "Relation to the source." of the theorem's docstring. Every item is labelled by its kind:
+    Translation (a dictionary entry: a Lean expression and what it is in the source), Unformalised
+    (an item of the source with no formal counterpart yet), Out of scope (one with none, by
+    decision), Correction (the printed claim is false; the hypothesis it needs is added),
+    Interpretation (the reading the library fixes where the source's wording admits more than one),
+    Restatement (a logically equivalent form), Strengthening (the formal statement implies the
+    source's), Gap (the formal statement is weaker or incomparable), Formalisation note (a remark
+    that is none of these). The definitions the statements use carry such sections too, read in
+    their docstrings and in the blueprint.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "Chris Elliott (statements against the sources, spot checks and the departures)"
+    - "Billy Snikkers (statement audit through the Challenge files and the comparator)"
+    - "Adam Newgas (Tau Ceti review rubrics run over the library; release engineering)"
+  notes: >
+    During the campaign, reader/review lanes gave recorded verdicts on every landing, and GPT-6
+    Astra reviewed selected proof write-ups. After the release clean-up, six independent agent
+    reviews (28 September 2026) compared every main theorem and its definitions against the source
+    texts and the prose; their findings were folded into the docstrings, the README and this file.
+    The restatement of the main theorems in the clause vocabulary of the definition modules
+    (1 October 2026) followed five further agent reviews (faithfulness, readability, Lean,
+    completeness, public release), and Hironaka's theorems were then audited against the printed
+    pages of the Annals. leanprover/comparator checks the main theorems in continuous integration.
+    No review by anyone outside the authors' organization is recorded.
+
+alignment:
+  note: >
+    One entry per theorem: the main theorems, in the order of comparator.json, then the other
+    theorems of the library cited to a source. `source` is the item of the source the theorem
+    formalizes, `module` the file that proves it, and `note` its departures from the source (see
+    fidelity.divergences).
+  # BEGIN GENERATED alignment.statements: do not edit
+  statements:
+    - source: "Hironaka 1964, Main Theorem II, pp. 142–143"
+      lean: "AlgebraicGeometry.exists_blowUpSequence_ord_weakTransformSeq_lt"
+      module: "Hironaka/Resolution/Algebraic/Hir64/ComponentwiseMainTheorems.lean"
+      status: "proved"
+      note: |-
+        - Translation. `S.weakTransformSeq J i` is Hironaka's $J_i$, `S.boundarySeq E₀ i` his $E_i$,
+          and `J.ord x` his $\nu(J_x)$; `IsGreatest (Set.range J.ord) d` says that $d$ is the
+          greatest of the orders $\nu(J_x)$.
+        - Translation. `[Smooth (X.left ↘ Spec (.of k))]` is Hironaka's "non-singular": for a scheme
+          of finite type over the perfect field `k` the two agree (smoothness gives the regularity
+          of every local ring, and a non-singular such scheme is smooth). As in the print, the
+          irreducible components of `X` may have different dimensions.
+        - Out of scope. Hironaka's remark that the theorem remains true over any local ring of his
+          class ℬ [Hir64, p. 151; ℬ defined on p. 161], which he uses for local rings of analytic
+          spaces (Main Theorem II′, p. 152). The base here is a field of characteristic zero, as in
+          the print ("a field **B** of characteristc [sic] zero").
+        - Interpretation. Hironaka's "coherent sheaf of non-zero ideals" is read as an ideal sheaf
+          (`X.left.IdealSheafData`, quasi-coherent, hence coherent on the Noetherian `X`) with
+          nonzero stalks (`hJ`).
+        - Restatement. The regularity of the local rings of `X` and the invertibility of the ideal
+          sheaf of `E₀` ("of everywhere codimension one"), which Hironaka also assumes, are not
+          separate hypotheses: they follow from the hypotheses kept (regularity from smoothness over
+          the perfect field `k`; invertibility from reducedness and normal crossings on a regular
+          scheme, see `IsSncBoundaryWith`). Of his "reduced subscheme of everywhere codimension one"
+          only the reducedness, `[IsReduced E₀.subscheme]`, is assumed.
+    - source: "Hironaka 1964, Main Theorem II(N), p. 176"
+      lean: "AlgebraicGeometry.exists_blowUpSequence_weakTransformSeq_eq_top"
+      module: "Hironaka/Resolution/Algebraic/Hir64/ComponentwiseMainTheorems.lean"
+      status: "proved"
+      note: |-
+        - Translation. The notation is that of Main Theorem II
+          (`exists_blowUpSequence_ord_weakTransformSeq_lt`): `S.weakTransformSeq J i` is $J_i$ and
+          `S.boundarySeq E i` is $E_i$. `S.weakTransformSeq J (Fin.last S.length) = ⊤` is
+          $J_r = \mathcal{O}_{X_r}$, the top ideal sheaf `⊤` being the unit ideal.
+        - Translation. As in Main Theorem II, `[Smooth (X.left ↘ Spec (.of k))]` is Hironaka's
+          "non-singular" (the two agree for a scheme of finite type over the perfect field `k`).
+        - Interpretation. As in Main Theorem II, Hironaka's "coherent sheaf of non-zero ideals" is
+          read as an ideal sheaf with nonzero stalks (`hJ`).
+        - Restatement. As in Main Theorem II, the regularity of `X` and the invertibility of the
+          ideal sheaf of `E`, which Hironaka also assumes, are not separate hypotheses: they follow
+          from the hypotheses kept (regularity from smoothness over the perfect field `k`;
+          invertibility from reducedness and normal crossings on a regular scheme).
+        - Restatement. Hironaka states the theorem for $X$ of dimension $N$, the index of the
+          fundamental theorem II₂^N from which he deduces it [Hir64, p. 176]; $N$ does not appear in
+          the conclusion. The statement here is II(N) for all $N$ at once. As in the print, `X` may
+          have several irreducible components (Hironaka reduces the proof to irreducible $X$).
+        - Gap. Hironaka's "algebraic scheme" [Hir64, Ch. I, p. 162] is a scheme of finite type over
+          $\operatorname{Spec} S$ for some local ring $S$ of his class ℬ (Noetherian, residue field
+          of characteristic zero, his condition (ii) on completions, p. 161), a class containing
+          every field of characteristic zero and the local rings of analytic spaces. Here `X` is
+          separated and of finite type over a field `k` of characteristic zero.
+    - source: "Hironaka 1964, Corollary 1, pp. 143–144"
+      lean: "AlgebraicGeometry.exists_blowUpSequence_forall_exists_stalkIdeal_weakTransformSeq_eq_top"
+      module: "Hironaka/Resolution/Algebraic/Hir64/ComponentwiseCorollaries.lean"
+      status: "proved"
+      note: |-
+        - Translation. The weak transforms are those of Main Theorem II
+          (`exists_blowUpSequence_ord_weakTransformSeq_lt`): `S.weakTransformSeq (J j) i` is
+          Hironaka's $J_j(i)$. "$\nu(J_j(i)_y)$ is a positive constant for the points $y$ of $D(i)$"
+          is `ord` equal to a natural number `c` with `0 < c` at every point of the support of the
+          centre ($\nu$ is integer-valued on non-zero ideals), and his
+          $J_j(r)_x = \mathcal{O}_{X(r),x}$ is
+          `(S.weakTransformSeq (J j) (Fin.last S.length)).stalkIdeal x = ⊤`, read on the stalk. His
+          $e \ge 1$ is `0 < e`.
+        - Translation. `[Smooth (X.left ↘ Spec (.of k))]` is Hironaka's "non-singular": for a scheme
+          of finite type over the perfect field `k` the two agree (smoothness gives the regularity
+          of every local ring, and a non-singular such scheme is smooth).
+        - Interpretation. Hironaka's "coherent sheaves of non-zero ideals" are read as ideal sheaves
+          with nonzero stalks (`hJ`), as in Main Theorem II.
+        - Restatement. The regularity of the local rings of `X` is not a separate hypothesis: it
+          follows from smoothness over the perfect field `k`.
+    - source: "Kollár 2007, Theorem 35"
+      lean: "AlgebraicGeometry.exists_functorial_principalization"
+      module: "Hironaka/Resolution/Algebraic/Kol07/Thm35/Principalization/FunctorClauses.lean"
+      status: "proved"
+      note: |-
+        - Translation. `S.pullback h` is Kollár's pull-back $h^* S$ [Kol07, 30.1],
+          `(S.pullback h).eraseEmpty` the same with the blow-ups with empty centre deleted [Kol07,
+          32], and `S.pushforward j` the push-forward $j_* S$ along a closed embedding [Kol07,
+          30.3]; `T.I.comap S.composite` is $\Pi^* I$, and `T.E.singularLocus` is
+          $\operatorname{Sing} E$, the set of points on at least two components of $E$.
+        - Correction. Clause (3) is stated over
+          $X \setminus (\operatorname{cosupp} I \cup \operatorname{Sing} E)$
+          (`Triple.IsPrincipalizedBy`): $\Pi$ is an isomorphism away from the cosupport of $I$ and
+          from the points on at least two components of $E$. Kollár prints
+          $X \setminus \operatorname{cosupp} I$, but his functor first blows up the intersections of
+          the components of $E$ [Kol07, 72], which need not lie in $\operatorname{cosupp} I$; the
+          two loci agree when $E = \emptyset$.
+        - Correction. The order reduction $BMO_1$ of [Kol07, Theorem 107] that the proof runs splits
+          a marked ideal as $I = M(I) \cdot N(I)$ with the monomial part
+          $M(I) = \prod_D \mathcal{I}_D^{\operatorname{ord}_D I}$ taking one exponent per
+          irreducible component $D$ of the boundary members (`Hironaka.BMO.monomialPart`; the split
+          of [Wlo05, Section 3, Step 2]). Kollár's construction [Kol07, 111] takes one exponent per
+          member, the minimum of $\operatorname{ord}_D I$ over the member's components; that split
+          does not commute with open immersions, so clause (2) of [Kol07, Theorem 107] fails for it:
+          on $\mathbb{A}^2$ with $E^1 = V(x(x-1))$, $E^2 = V(y(y-1))$ and $I = (xy)$ both exponents
+          are $0$, and both are $1$ on the open set $x \ne 1$, $y \ne 1$. The fine split commutes
+          with smooth pull-back, since orders at generic points are preserved.
+        - Gap. The inputs are the triples $(X, I, E)$ of [Kol07, Notation 64] (`Triple`), under
+          which Kollár proves the theorem: their ambient scheme $X$ is smooth and equidimensional,
+          whereas Theorem 35 as printed does not ask $X$ to be equidimensional. The base change of a
+          triple along a field extension is again a triple.
+        - Gap. Kollár's $E$ is an unordered simple normal crossing divisor. Here it is an ordered
+          family (`DivisorFamily`), and clause (4) compares values on families with the induced
+          orders; nothing relates the values at two orderings of one divisor.
+    - source: "Hironaka 1964, Corollary 3, p. 146"
+      lean: "AlgebraicGeometry.exists_blowUpSequence_isInvertible_isSncBoundary_radical_comap"
+      module: "Hironaka/Resolution/Algebraic/Hir64/ComponentwiseCorollaries.lean"
+      status: "proved"
+      note: |-
+        - Translation. $\bar f_i$ is `S.stageMap i.castSucc` and $\bar f_r$ is `S.composite`. The
+          associated reduced scheme $\mathrm{red}(\bar f_r^{-1}(W))$ is the radical
+          `(W.comap S.composite).radical` of the inverse image ideal sheaf; "invertible" is
+          `IsInvertible` (generated on an affine neighbourhood of every point by a nonzerodivisor,
+          an effective Cartier divisor; on the locally Noetherian `X_r` this is the stalkwise
+          condition that every stalk is generated by a nonzerodivisor of the local ring,
+          `isInvertible_iff_forall_stalkIdeal_eq_span`), and "has only normal crossings" is
+          Hironaka's Definition 2 (`IsSncBoundary`).
+        - Translation. Clause (ii) is read on points: every point of a centre maps into the support
+          of `W`; since $D_i$ is non-singular, hence reduced, this is the inclusion
+          $D_i \subseteq \bar f_i^{-1}(W)$ of subschemes.
+        - Translation. `[Smooth (X.left ↘ Spec (.of k))]` is Hironaka's "non-singular" for `X`: for
+          a scheme of finite type over the perfect field `k` the two agree (smoothness gives the
+          regularity of every local ring, and a non-singular such scheme is smooth).
+        - Interpretation. Hironaka's "nowhere dense" for the closed subscheme $W$ of $X$ is read
+          topologically, of its support (`IsNowhereDense (W.support : Set X.left)`).
+        - Restatement. The regularity of the local rings of `X` is not a separate hypothesis: it
+          follows from smoothness over the perfect field `k`.
+    - source: "Kollár 2007, Theorem 36"
+      lean: "AlgebraicGeometry.exists_functorial_resolution"
+      module: "Hironaka/Resolution/Algebraic/Kol07/Thm36/Theorem36.lean"
+      status: "proved"
+      note: |-
+        - Translation. `(X.left ↘ Spec (.of k)).smoothLocus`, Mathlib's `smoothLocus` of the
+          structure morphism, is Kollár's $X^{ns}$, and its complement is $\operatorname{Sing} X$;
+          over a field of characteristic zero it is the set of points with regular local ring
+          (`Scheme.mem_smoothLocus_iff_isRegularAt`).
+        - Interpretation. Kollár's clause (3), "$\Pi^{-1}(\operatorname{Sing} X)$ is a divisor with
+          simple normal crossings", is read with the reduced structure on
+          $\Pi^{-1}(\operatorname{Sing} X)$: it is `IsSncDivisor` of that set of points.
+        - Restatement. Kollár's clauses (1)–(3) for the blow-up sequence $BR(X)$ are stated as
+          `IsStrongResolution`, which also asks that $\Pi$ be projective and birational: a strong
+          resolution in the sense of [Kol07, (3)], as the sentence introducing the theorem says ("we
+          obtain strong and functorial resolution"). Both follow from the other clauses: the
+          composite of a succession of blow-ups of a Noetherian scheme is projective, and by (2)
+          $\Pi$ is an isomorphism over the smooth locus, which is dense.
+        - Gap. Kollár states the theorem for all schemes of finite type over `k`. The inputs here
+          (`ReducedEquidimensionalScheme`) are the reduced, equidimensional ones
+          (`Scheme.IsReducedEquidimensional`), whose irreducible components may meet; the
+          non-reduced schemes and the schemes with components of different dimensions are excluded,
+          and (4) is asserted only between inputs. Kollár proves the theorem by feeding triples in
+          the sense of [Kol07, Notation 64] (smooth equidimensional ambient schemes) to Theorem 35,
+          and the construction here needs both restrictions: for a non-reduced `X` the strict
+          transform at which the run is truncated need not be reduced; for components of different
+          dimensions (4) fails. For `X` the cuspidal curve `y² = x³`, `Y = X ⊔ (X × 𝔸¹)` and the
+          smooth surjection `h = 𝟙 ⊔ pr₁`, the run on an embedding of `Y` first blows up only the
+          cusp line of the second piece, where the order is `2`, whereas `h^* BR(X)` first blows up
+          the preimage of the cusp point, which contains the cusp point of the first piece. Kollár's
+          remark that 34.1 is a local property is where a proof for mixed dimensions would be
+          needed; none is printed.
+        - Formalisation note. The class of inputs is stable under change of fields and under étale
+          `k`-morphisms, so (4) covers the base change of every input along every field extension
+          and every étale morphism to an input: over a field of characteristic zero a reduced scheme
+          of finite type is geometrically reduced [Sta, Tag 020I], smoothness is stable under base
+          change [Sta, Tag 01VB] and fpqc local on the base [Sta, Tag 02VL], an étale morphism has
+          reduced source when its target is reduced [Sta, Tag 033B], and smoothness descends along
+          smooth surjections [Sta, Tag 02K5]. These stability facts are not formalized: applying (4)
+          to a given base change requires showing that it is an input.
+    - source: "Kollár 2007, Theorem 27"
+      lean: "AlgebraicGeometry.exists_strong_resolution"
+      module: "Hironaka/Resolution/Algebraic/Kol07/Thm36/Theorem36.lean"
+      status: "proved"
+      note: |-
+        - Translation. Kollár's variety is an integral algebraic `k`-scheme, `X : AlgScheme k` with
+          `[IsIntegral X.left]`.
+        - Translation. Kollár's "birational and projective morphism" is the projectivity
+          (`IsProjective`, [Sta, Tag 01W8]) and the birationality of `BlowUpSequence.IsResolution`.
+        - Interpretation. Kollár's clause (3), "$\Pi^{-1}(\operatorname{Sing} X)$ is a divisor with
+          simple normal crossing", is read with the reduced structure on
+          $\Pi^{-1}(\operatorname{Sing} X)$, as in Theorem 36
+          (`AlgebraicGeometry.exists_functorial_resolution`).
+        - Strengthening. Kollár assumes `X` quasi-projective, which his proof uses to embed `X` in a
+          projective space; no such hypothesis is made here.
+        - Strengthening. Here $\Pi$ (`S.composite`) is in addition the composite of a succession of
+          blow-ups of `X`, whose centres are not asserted to be smooth; Theorem 27 as printed does
+          not say this. It matches Kollár's construction: his $R(X)$ is the birational transform of
+          $X$ that is a centre $Z_j$ of a succession of smooth blow-ups of an ambient smooth $P$,
+          and by restriction [Kol07, 30.2] his $\Pi$ is the composite of the blow-ups of the
+          birational transforms of $X$ along their intersections with the earlier centres, which may
+          be singular [Kol07, Warning 23].
+    - source: "Hironaka 1964, Main Theorem I, p. 132"
+      lean: "AlgebraicGeometry.exists_support_eq_singularLocus_isRegular_blowUp"
+      module: "Hironaka/Resolution/Algebraic/Hir64/MainTheoremI.lean"
+      status: "proved"
+      note: |-
+        - Translation. `(D.support : Set X.left) = X.left.singularLocus` is Hironaka's (i), "the set
+          of points of $D$ is exactly the singular locus of $X$"; `IsRegular D.blowUp` is his (ii),
+          the non-singularity of the result of the monoidal transformation of $X$ with centre $D$.
+        - Out of scope. Hironaka's strong form [Hir64, pp. 132–133], that `D.blowUpπ` is the
+          composite of a finite succession of monoidal transformations whose centres $D_i$ are
+          non-singular (a), contain no simple point of $X_i$ (b), and along which $X_i$ is normally
+          flat (c), and Main Theorem I*: both rest on the Hilbert–Samuel function and normal
+          flatness, whereas the library follows the route through the order of an ideal and
+          hypersurfaces of maximal contact, as in Włodarczyk's and Kollár's proofs. The statement
+          here is Main Theorem I as printed.
+        - Interpretation. Hironaka's "say reduced and irreducible" is read as a hypothesis
+          (`IsIntegral`). His Introduction describes Main Theorem I as "the resolution of
+          singularities of an arbitary [sic] reduced algebraic **B**-scheme X" [Hir64, p. 112],
+          irreducible or not; reducible `X` is not covered here.
+    - source: "Hironaka 1964, the paragraph after Main Theorem I, p. 132"
+      lean: "AlgebraicGeometry.exists_dense_isIso_restrict_isRegular_blowUp"
+      module: "Hironaka/Resolution/Algebraic/Hir64/MainTheoremI.lean"
+      status: "proved"
+      note: |-
+        - Translation. `D.support.compl` is the open complement $U = X \setminus D$, and
+          `IsIso (D.blowUpπ ∣_ U)` says that the restriction $f^{-1}(U) \to U$ of the projection
+          `D.blowUpπ` over $U$ is an isomorphism.
+        - Interpretation. As in Main Theorem I, Hironaka's "say reduced and irreducible" is read as
+          a hypothesis (`IsIntegral`), although his Introduction [Hir64, p. 112] describes Main
+          Theorem I for every reduced $X$.
+    - source: "Włodarczyk 2005, Theorem 1.0.2"
+      lean: "AlgebraicGeometry.exists_functorial_embeddedDesingularization"
+      module: "Hironaka/Resolution/Algebraic/Wlo05/EmbeddedFunctorClauses.lean"
+      status: "proved"
+      note: |-
+        - Translation. `S.totalTransformSeq (DivisorFamily.empty _) i` is Włodarczyk's exceptional
+          divisor $E_i$, `S.strictTransformSeq P.Y i` his strict transform $Y_i$, and the image in
+          `X` of the smooth locus of `Y → Spec k` is his $\operatorname{Reg}(Y)$.
+        - Interpretation. Włodarczyk's "subvariety $Y$ of a smooth variety $X$" is read as a reduced
+          closed subscheme `Y` of a smooth, equidimensional algebraic `k`-scheme `X`
+          (`EmbeddedPair`). His Bravo–Villamayor strengthening, the source of clause (e), is stated
+          for "a reduced closed subscheme" [Wlo05, Theorem 4.7.1].
+        - Gap. In clause (e), $\sigma^*(I_Y) = I_{\tilde Y} I_{\tilde E}$, Włodarczyk's divisor
+          $\tilde E$ is "a natural combination of the irreducible components of the divisor $E_r$";
+          here `J` is only asked to be the ideal sheaf of a simple normal crossing divisor supported
+          in $E_r$.
+        - Gap. In clause (d) the deletion form, in which `ED(X', Y')` is the pull-back of `ED(X, Y)`
+          with the empty blow-ups deleted, is asserted only when the image of `h` meets every
+          component of `Y`, whereas Włodarczyk's (d), read through his Definition 2.1.5 (extensions
+          by isomorphisms) and Proposition 2.4.2, asserts it for every smooth `h`. The construction
+          handles the components of `Y` in rounds whose boundary data depend on all of them, and
+          over an open subset missing a component the runs fall out of step: for `Y` the disjoint
+          union of a smooth surface and the three coordinate axes through a point off it, in a
+          smooth threefold, the pull-back of `ED(X, Y)` to the complement of the surface has three
+          non-empty centres that the run on that complement lacks.
+        - Gap. The parts of Włodarczyk's (d) on embeddings of ambient varieties and on equivariance
+          under group actions have no counterpart; in particular, although the family `ED` has one
+          functor for each field, no clause relates the functors of different fields, as Kollár's
+          change of fields [Kol07, 34.2] (`CommutesWithChangeOfFields`) does. The functor built here
+          is not Włodarczyk's single invariant-driven run, and functoriality for closed embeddings
+          is, in Kollár's words, "quite delicate" [Kol07, 34 and Claim 71.2]: he proves it only for
+          an empty boundary, whereas the later rounds here run with the exceptional divisors of the
+          earlier ones as boundary.
+    - source: "Hironaka 1964, Main Theorem II″(N), pp. 158–159; Włodarczyk 2009, Theorem 2.0.3 (1) and (4)"
+      lean: "AnalyticManifold.exists_extensionCompatibleFamily_weakTransformSeq_eq_top"
+      module: "Hironaka/Resolution/Analytic/Wlo09/HironakaAssembly.lean"
+      status: "proved"
+      note: |-
+        - Translation. `F : ExtensionCompatibleFamily X` with `F.map` is the pair
+          $(\tilde X, \sigma)$; `F.nhd K` is $U_K$ and `F.seq K` the finite succession over it;
+          `(F.seq K).weakTransformSeq (J₀.restrict (F.nhd K)) i` is $J_i$ and
+          `(F.seq K).boundarySeq (E₀.restrict (F.nhd K)) i` is $E_i$.
+        - Translation. A real-analytic manifold, `X : AnalyticManifold ℝ E`, is Hironaka's
+          non-singular analytic $\mathbb{R}$-space.
+        - Interpretation. Hironaka's "has only normal crossings" for the boundary is read on his
+          global irreducible components [Hir64, Definition 2, p. 141], that is, as simple normal
+          crossings in the sense of [Kol07, Definition 24] (`IsSncBoundary`, `IsSncBoundaryWith`).
+        - Interpretation. Hironaka's "coherent sheaf of non-zero ideals" is read as a locally
+          finitely generated ideal sheaf (`IdealSheaf X`, coherent by Oka's theorem) with nonzero
+          stalks (`hJ₀`).
+        - Restatement. The reducedness and invertibility of `E₀`, which Hironaka assumes ("reduced
+          analytic subspace everywhere of codimension one"), are not separate hypotheses: both
+          follow from the family of smooth hypersurfaces with simple normal crossings that `hE₀`
+          provides, whose reduced ideal sheaf is `E₀`.
+        - Strengthening. In clause (iii) `IsSncBoundaryWith` also asserts that $E_i$ has only normal
+          crossings at every point, which Hironaka's "with $D_i$" [Hir64, Definition 2, p. 141] does
+          not; he derives it from (iii) (the remark after Main Theorem II, p. 143), and it is
+          [Wlo09, Theorem 2.0.3 (2)].
+        - Gap. Hironaka's succession is one locally finite succession
+          $\{f_\lambda : X_{\lambda+1} \to X_\lambda\}$ of $X$ itself, indexed by a countable
+          well-ordered set $\Lambda$ with maximal element $\gamma$ (projective limits at the
+          elements without predecessor) [Hir64, p. 155], whose canonical modification
+          $X_\gamma \to X$ he notes is proper (p. 155, after Main Theorem I′(n)). Here it is
+          replaced by a finite succession $U_0 \leftarrow \cdots \leftarrow U_r$ (`F.seq K`) over a
+          neighbourhood $U_K$ (`F.nhd K`) of each compact $K$, compatible across compacts, and the
+          proper map $\sigma$ (`F.map`). Restricting Hironaka's succession over $U_K$ gives such a
+          family (by local finiteness only finitely many centres meet the preimage of $U_K$); the
+          compatible family is not asserted to come from one succession of $X$. Włodarczyk's
+          "locally finite" is the compatible-family form itself.
+        - Gap. Clause (i) asserts non-singularity only, and a centre may be empty or have several
+          components. Hironaka's irreducibility of the centres is not asserted per compact:
+          Włodarczyk's centres are disjoint unions of smooth centres [Wlo09, Definition 3.2.4], and
+          the irreducible refinement of the succession over a smaller compact is in general not the
+          restriction of the succession over a larger one, which [Wlo09, Theorem 2.0.3 (4)]
+          requires.
+        - Gap. Hironaka's $X$ is any non-singular analytic $\mathbb{R}$-space; II″(N) does not fix
+          its dimension (the "of dimension $N$" is in II′(N), p. 156). Here `X` has one model space
+          `E`, so it is pure-dimensional; a non-singular space whose components have different
+          dimensions is the disjoint union of its pure-dimensional open and closed parts, to each of
+          which the theorem applies. No finite-dimensionality of `E` is assumed: the coordinates
+          `E ≃ ℝⁿ` that `hE₀` provides make `E` finite-dimensional.
+    - source: "Bierstone–Milman 1997, Theorem 1.10; Włodarczyk 2009, Theorem 2.0.3"
+      lean: "AnalyticManifold.exists_extensionCompatibleFamily_isNormalCrossingsDivisor_jacobianIdeal_mul_pullback"
+      module: "Hironaka/Resolution/Analytic/BM97/JacobianAssembly.lean"
+      status: "proved"
+      note: |-
+        - Translation. `I.pullback F.map F.map.contMDiff` is Bierstone–Milman's
+          $\sigma^{-1}(I) = \sigma^*(I) \cdot \mathcal{O}_{M_k}$, and
+          `F.map.jacobianIdeal * I.pullback F.map F.map.contMDiff` their
+          $\mathcal{J} \cdot \sigma^{-1}(I)$, $\mathcal{J}$ the ideal generated by the Jacobian
+          determinant of $\sigma$;
+          `(F.seq K).weakTransformSeq (I.restrict (F.nhd K)) (Fin.last _) = ⊤` is their
+          $I_k = \mathcal{O}_{M_k}$; `(F.seq K).HasSncBoundaries ⊤` is the clause on the exceptional
+          divisors $E_j$, `⊤` being the empty boundary; and `F.map.IsIsoOver I.supportᶜ` says that
+          $\sigma$ is an isomorphism over the complement of the support of $I$.
+        - Correction. The hypothesis that `I` has nonzero stalks (`hI`) is tacit in the source:
+          without it $\sigma^*(I)$ could not be a divisor. Kollár's principalization states it
+          explicitly, for an ideal sheaf "not zero on any irreducible component" [Kol07, Theorem
+          35].
+        - Interpretation. Bierstone–Milman's "smooth $\mathrm{inv}_I$-admissible centres" are read
+          as smooth centres having simple normal crossings with the exceptional divisor accumulated
+          so far; the invariant $\mathrm{inv}_I$ does not appear in the statement.
+        - Strengthening. Bierstone–Milman's finite sequence of blow-ups, for a quasi-compact $|M|$,
+          is here a finite succession over a neighbourhood of every compact, compatible across
+          compacts: for a manifold that is not quasi-compact the finite sequence is replaced by a
+          locally finite one, by analogy with the remark after [BM97, Theorem 1.6], which is made
+          for Theorem 1.6 only. For a compact `M` the family contains one finite succession over
+          `M`.
+        - Strengthening. That the last exceptional divisor $E_r$ has simple normal crossings (in
+          `HasSncBoundaries`) is not a clause of [BM97, Theorem 1.10]: it is their remark that
+          admissibility "guarantees that $E_{i+1}$ is a collection of smooth hypersurfaces having
+          only normal crossings" [BM97, after (1.2)], and [Wlo09, Theorem 2.0.3 (2)] at $i = r$.
+        - Strengthening. The clause that $\sigma$ is an isomorphism over the complement of the
+          support of $I$ (`F.map.IsIsoOver I.supportᶜ`) is not in [BM97, Theorem 1.10] or [Wlo09,
+          Theorem 2.0.3]; it is [Wlo09, Lemma 4.0.3], cf. [Kol07, Theorem 35 (3)].
+    - source: "Włodarczyk 2009, Theorem 2.0.3, p. 35; Kollár 2007, Theorem 35"
+      lean: "AnalyticManifold.exists_functorial_principalization"
+      module: "Hironaka/Resolution/Analytic/Wlo09/FunctorialPrincipalization.lean"
+      status: "proved"
+      note: |-
+        - Translation. `P` is Włodarczyk's principalization as a rule on all pairs $(M, I)$, the
+          morphism $\mathrm{prin}$ of his last sentence: for the pair `T = (M, I)`, `P T` is the
+          compatible family of $\mathrm{prin}_I \colon \tilde M \to M$, and
+          `T.I.IsLocallyFinitelyPrincipalizedBy (P T)` is his "there exists a locally finite
+          principalization of $I$", with clauses (1)–(3).
+        - Translation. "Embeddings of ambient varieties" in the last sentence is read as Kollár's
+          commutation with closed embeddings [Kol07, Theorem 35 (5)], in the form of [Kol07, 34.3]
+          for an empty boundary: $B(X, I_X) = j_* B(Y, I_Y)$ for a closed embedding $j$ of smooth
+          varieties with $\mathcal{O}_X / I_X = j_*(\mathcal{O}_Y / I_Y)$, here
+          `I.IsPushforwardAlong J τ` with the closed embedding `τ` (an analytic embedding with
+          closed image), whose image is a closed submanifold: the ideal of the image
+          (`vanishingStalk`) lies in `I`, and `J = τ^*I`. This is Włodarczyk's
+          $I = \tau_*(J) \cdot \mathcal{O}_M$ [Wlo09, Remark (3) after Theorem 2.0.3], whose
+          canonical resolution has the centres $\tau(C_i)$ of that of $J$ [Wlo09, Theorem 3.5.1
+          (3)]. The proof follows Kollár's derivation from his Claim 71.2 [Kol07, 72], the
+          commutation of the marked order reduction with closed embeddings, through [Kol07, Theorem
+          107 (3)] and [Kol07, Theorem 103 (3)] at the mark `1`, the value of `P`.
+        - Correction. The hypothesis that $I$ has nonzero stalks (the field `isNonzeroEverywhere` of
+          the pair) is tacit in the source: otherwise the total transform $\sigma^{r*}(I)$ could not
+          be the ideal of a divisor. Kollár states it explicitly, for an ideal sheaf "not zero on
+          any irreducible component" [Kol07, Theorem 35]. The ideal sheaves with a zero stalk are
+          not inputs, so nothing is asserted of them.
+        - Interpretation. In Włodarczyk's clause (3), the total transform $\sigma^{r*}(I)$ "is the
+          ideal of a simple normal crossing divisor $\tilde E_U$ which is a locally finite
+          combination of the irreducible components of the divisor $E_{U_r}$": the exponents of
+          $\tilde E_U$ are read at each point, $\tilde E_U$ near a point being a combination of the
+          components of $E_{U_r}$ through it.
+        - Interpretation. Włodarczyk's sheaf of ideals $\tilde I$ on $\tilde M$, which none of his
+          clauses mentions, is read as the total transform $\mathrm{prin}_I^*(I)$; it is asserted to
+          be a normal-crossings divisor (`IdealSheaf.IsNormalCrossingsDivisor`), the form of clause
+          (3) that is local on $\tilde M$.
+        - Interpretation. The exact equality for a surjective local analytic isomorphism [Wlo09,
+          Theorem 3.5.1 (1)] has no counterpart per pair of compact sets: for $g$ the identity and
+          compacts $K' \subsetneq K$ with a centre of the succession over $U_K$ lying over
+          $U_K \setminus U_{K'}$, the succession induced over $U_{K'}$ has an empty centre which the
+          succession over $U_{K'}$ omits. Its global content is read as: for surjective $g$ the lift
+          $\tilde g$ is a surjective local analytic isomorphism identifying $\tilde N$ with
+          $N \times_M \tilde M$.
+        - Interpretation. Włodarczyk's analytic manifold is read as pure-dimensional: the local
+          analytic isomorphisms relate manifolds modelled on one space, and a closed embedding
+          relates manifolds modelled on two, so the pairs carry their model space and `P` is one
+          assignment over all finite-dimensional model spaces over $\mathbb{K}$.
+        - Restatement. The commutation with closed embeddings is stated over every pair of compact
+          sets, as the push-forward of a succession up to blow-ups whose centres lie outside the
+          part over $\tau(U_{K'})$ (`FiniteSuccession.IsPushforwardUpToEmptyAlong`): the succession
+          of `P(M, I)` over $U_K$ also blows up centres over $U_K \setminus \tau(U_{K'})$, which the
+          succession over $U_{K'}$ does not see. The strict transforms of $\tau(N)$ are not formed:
+          the relation is stated through embeddings of the stages, over $\tau$, with closed images
+          containing every centre point over $\tau(U_{K'})$ and along which the centres pull back.
+        - Restatement. The commutation with local analytic isomorphisms is stated in two forms: over
+          every pair of compact sets, as the relation between two successions of [Wlo09, Theorem
+          3.5.1 (2)], and globally, as the lift of $g \colon N \to M$ to a local analytic
+          isomorphism $\tilde g \colon \tilde N \to \tilde M$ over $g$ identifying $\tilde N$ with
+          the fibre product $N \times_M \tilde M$, the "natural lifting" of [Wlo09, Theorem 2.0.1
+          (3)]; the fibre product is stated pointwise, as the bijection of $\tilde g$ between the
+          fibres over corresponding points.
+        - Strengthening. Every neighbourhood $U_K$ has compact closure, which the source does not
+          ask. It makes the commutations apply, for a local analytic isomorphism or a closed
+          embedding $g \colon N \to M$, to every compact set $K'$ of $N$: the closure $K$ of
+          $g(U_{K'})$ is compact, and $g(U_{K'}) \subseteq K \subseteq U_K$.
+        - Strengthening. The clause that $\mathrm{prin}_I$ is an isomorphism over the complement of
+          the support of $I$ is not in [Wlo09, Theorem 2.0.3]; it is [Wlo09, Lemma 4.0.3] and, for
+          an empty boundary, [Kol07, Theorem 35 (3)].
+        - Strengthening. Each centre has a single codimension, and empty centres are admitted (their
+          blow-ups are isomorphisms).
+        - Gap. Compared with Kollár's functorial principalization [Kol07, Theorem 35]
+          (`AlgebraicGeometry.exists_functorial_principalization`): the inputs are pairs $(M, I)$,
+          Kollár's triples with an empty boundary; the values are compatible families over the
+          compact sets rather than single blow-up sequences, as Kollár's passage to analytic spaces
+          provides them [Kol07, 44]; the commutation with smooth morphisms [Kol07, 34.1] is
+          asserted, in Włodarczyk's form, for local analytic isomorphisms only, the smooth morphisms
+          of relative dimension zero; and the commutation with change of fields [Kol07, 34.2] has no
+          counterpart.
+    - source: "Włodarczyk 2009, Theorem 2.0.2"
+      lean: "AnalyticManifold.exists_embeddedDesingularization"
+      module: "Hironaka/Resolution/Analytic/Wlo09/EmbeddedDesingularization.lean"
+      status: "proved"
+      note: |-
+        - Translation. `R` is Włodarczyk's embedded desingularization as a rule on all pairs
+          $(M, Y)$, the morphism $\mathrm{res}$ of his clause (4):
+          `T.Y.IsLocallyFinitelyDesingularizedBy (R T)` is his conclusion for the embedded pair
+          `T = (M, Y)`, with `(R T).map` his $\mathrm{res}_{Y,M}$. `I.regularLocus` is his
+          $\operatorname{Reg}(Y)$, the points at which the local ring $\mathcal{O}_{M,x}/I_x$ of $Y$
+          is regular, and `((R T).seq K).strictTransformSubspaceSeq (I.restrict ((R T).nhd K)) i` is
+          $Y_i$.
+        - Translation. "Embeddings of ambient varieties" in clause (4) is read as Kollár's
+          commutation with closed embeddings [Kol07, 34.3] over every pair of compact sets, as the
+          last sentence of [Wlo09, Theorem 2.0.3] is, the stages of the succession over $N$
+          embedding over $\tau$ into those of the succession over $M$.
+        - Translation. That no centre is empty is the first half of Włodarczyk's Remark (2) after
+          Theorem 2.0.3, in the empty blow-up convention of [Kol07, 32]. The codimension clause
+          reads its second half, centres of codimension at least two, with his Remark (1), that the
+          blow-up of a centre of codimension one is an isomorphism making it a component of the
+          exceptional divisor: a centre of codimension one lies in the exceptional divisor already.
+          No centre has codimension zero, since the centres lie over $\operatorname{Sing}(Y)$, which
+          for a reduced $Y$ contains no smooth hypersurface germ, and no open set.
+        - Correction. The hypothesis that $Y$ is reduced (`isReduced`) is tacit in the source:
+          Włodarczyk's $Y$ is "an analytic subspace", but the algebraic original of clause (6)
+          assumes "a reduced closed subscheme" [Wlo05, Theorem 4.7.1], and his conclusion fails for
+          the double line $Y = V(x^2) \subset \mathbb{K}^2$. His centres have codimension at least
+          two [Wlo09, Remark (2) after Theorem 2.0.3], so their images in $\mathbb{K}^2$ form a
+          closed discrete set $P$, $\sigma$ is an isomorphism over $\mathbb{K}^2 \setminus P$, and
+          no component of $E_r$ meets the preimage $\tilde p$ of a point $p$ of the line off $P$. By
+          (6), $I_{\tilde Y, \tilde p} = (x^2)$: either $\tilde Y$ has the non-regular local ring
+          $\mathcal{O}/(x^2)$, against (3), or, read as reduced, $I_{\tilde Y} = (x)$ and (6) fails.
+          The same argument, with images of dimension at most $\dim M - 2$, applies whenever $Y$ is
+          generically non-reduced along a component of dimension $\dim M - 1$. Blowing up the line
+          itself, a formal codimension-one blow-up of his Remark (1), would satisfy (3) and (6) with
+          $\tilde Y = \emptyset$, but this is excluded by his Remark (2) and by "the support of the
+          divisor $E$ is the exceptional locus".
+        - Interpretation. His "the support of the divisor $E$ is the exceptional locus of
+          $\mathrm{res}_{Y,M}$" is read as $|E_r| = \sigma_K^{-1}(\operatorname{Sing} Y)$ for every
+          compact $K$.
+        - Interpretation. Clauses (3) and (6) are read at each point: "has only simple normal
+          crossings with the exceptional divisor $E_r$", said of $\tilde Y$, with the codimension of
+          $\tilde Y$ read at each point and transversally (`IsSncBoundaryTransversalTo`); in
+          $\sigma^*(I_Y) = I_{\tilde Y} I_{\tilde E}$, $\tilde E$ near a point is a combination of
+          the components of $E_r$ through it, rather than "a locally finite combination of the
+          irreducible components of the divisor $E_{U_r}$".
+        - Interpretation. Włodarczyk's manifold `M` is read as pure-dimensional: local analytic
+          isomorphisms relate manifolds modelled on one space and closed embeddings manifolds
+          modelled on two, so the embedded pairs carry their model space and `R` is one assignment
+          over all finite-dimensional model spaces.
+        - Restatement. Włodarczyk's divisor $E$ and strict transform $\tilde Y$ on $\tilde M$ are
+          the `E` and `Y` of `exists_divisor_strictTransform`: on the last stage
+          $U_r \cong \mathrm{res}_{Y,M}^{-1}(U_K)$ over every compact (`(R T).toSpace K`) they are
+          $E_r$ and $Y_r$, and his clauses (1), (3) and (6) are asserted on $\tilde M$ and on every
+          $U_r$. The support identity $|E| = \mathrm{res}_{Y,M}^{-1}(\operatorname{Sing} Y)$ and the
+          smoothness of $\tilde Y$ are stated on every $U_r$ only, from which they follow on
+          $\tilde M$ (`IdealSheaf.IsGloballyDesingularizedBy.support_eq`,
+          `IdealSheaf.IsGloballyDesingularizedBy.isNonsingular`).
+        - Restatement. That clause is asserted when no connected component of $N$ lies in $Y$,
+          Kollár's "$0 \neq I_Y$": on such a component the embedded desingularization of
+          $Y \subseteq N$ is trivial, while that of $Y \subseteq M$ may blow up centres on it where
+          other components of $Y$ meet it.
+        - Strengthening. That $\mathrm{res}_{Y,M}$ is an isomorphism over
+          $M \setminus \operatorname{Sing}(Y)$, whose preimage is, over each $U_K$, the complement
+          of the simple normal crossings divisor $E_r$, hence dense, says more than Włodarczyk's
+          "bimeromorphic". Over $\operatorname{Reg}(Y)$ it follows from his clause (2); over
+          $M \setminus Y$ it is not in Theorem 2.0.2 but holds for his construction, an initial
+          segment of the principalization of $I_Y$, which is an isomorphism over
+          $M \setminus V(I_Y)$ [Wlo09, Lemma 4.0.3].
+        - Strengthening. The factorization is indexed by the compacts `K` of `M`, not only by
+          Włodarczyk's compact sets $Z \subset Y$, with $K \subseteq U_K$ made explicit.
+        - Strengthening. Each centre has a single codimension.
+        - Gap. Non-reduced subspaces with no generically non-reduced component of dimension
+          $\dim M - 1$ are not covered: those with embedded components, such as
+          $V(x^2, xy) \subset \mathbb{K}^2$, and those generically non-reduced only along components
+          of codimension at least two, such as $V(x^2, y) \subset \mathbb{K}^3$. The counterexample
+          does not apply to them.
+        - Gap. The commutation with local analytic isomorphisms is stated over every pair of compact
+          sets only. The lift of $g \colon N \to M$ to a map $\tilde N \to \tilde M$ identifying
+          $\tilde N$ with $N \times_M \tilde M$, which the principalization theorem states, is not
+          stated here, and with it the global content of the exact equality for a surjective $g$
+          [Wlo09, Theorem 3.5.1 (1)], which has no counterpart per pair of compact sets.
+        - Gap. Centres of codimension one are not removed from the successions. Deleting their steps
+          would leave $\mathrm{res}_{Y,M}$, the exceptional divisors and the strict transforms
+          unchanged (the equation of such a centre is a nonzerodivisor modulo the strict transform
+          at that stage), but a centre of codimension one of a submanifold $N$ of positive
+          codimension pushes forward to a centre of codimension at least two of $M$, so the deletion
+          is incompatible with the commutation with closed embeddings in its push-forward form.
+          Włodarczyk notes that such blow-ups "may occur for some marked ideals induced on
+          subvarieties of ambient varieties" and "determine blow-ups of ambient varieties which are
+          not isomorphisms" [Wlo09, Remark after Lemma 5.3.7].
+    - source: "Kollár 2007, Theorem 45; Włodarczyk 2009, Theorem 2.0.1"
+      lean: "AnalyticSpace.exists_functorial_resolution"
+      module: "Hironaka/Resolution/Analytic/Kol07Thm45/ResolutionAssembly.lean"
+      status: "proved"
+      note: |-
+        - Translation. `R.space X` and `R.map X` are Kollár's $R(X)$ and $\Pi_X$ for the input `X`,
+          whose underlying space is `X.obj`; `X.regularLocus` is the set of simple points (his
+          $X^{ns}$) and `X.singularLocus` its complement; clause (3) is a closed subspace `E` with
+          `E.IsSncBoundary` and `E.support` equal to $\Pi_X^{-1}(\operatorname{Sing} X)$.
+          Composition `≫` is in diagrammatic order: in (5),
+          `ψ ≫ (R.map Y).restrictSet V = (R.map X).restrictSet U ≫ φ` is
+          $\Pi_Y|_V \circ \psi = \varphi \circ \Pi_X|_U$, and `ψ ≫ R.map X = R.map X' ≫ φ` is
+          $\Pi_X \circ \psi = \varphi \circ \Pi_{X'}$.
+        - Interpretation. Kollár's resolution is birational and Włodarczyk's bimeromorphic. Here
+          $\Pi_X$ is bimeromorphic onto its image: an isomorphism over an open set whose preimage is
+          dense.
+        - Strengthening. Over $\mathbb{R}$ the simple locus of a reduced space need not be dense
+          [Hir64, Introduction]: the subspace $x^2 + y^2 = 0$ of $\mathbb{R}^2$ is reduced and has
+          support the origin and no simple point (in `HironakaExamples`:
+          `Hironaka.Space.circleSpace_isReduced`,
+          `Hironaka.Manifold.circleIdeal_cosupport_eq_singleton` and
+          `Hironaka.Manifold.circleIdeal_regSet_eq_empty`). So $\Pi_X$ need not be surjective; its
+          image is the closure of the simple locus, a clause printed in neither source.
+        - Strengthening. Włodarczyk's clause (3) lifts every local analytic isomorphism
+          $\varphi \colon Y' \to Y$ to a natural local analytic isomorphism
+          $\tilde\varphi \colon \tilde Y' \to \tilde Y$. Here the lift is the only morphism
+          $R(Y') \to R(Y)$ over $\varphi$, and a local analytic isomorphism; the lift of an
+          isomorphism between open subspaces is likewise the only morphism over it, so the lift of
+          $\varphi$ restricts, over every open on which $\varphi$ is injective, to the lift of the
+          isomorphism of open subspaces, and the naturality follows from the uniqueness. The lift is
+          glued from those lifts over the opens on which $\varphi$ is injective, and the uniqueness
+          rests on the rigidity of morphisms out of a non-singular space: two morphisms that agree
+          on a dense open subspace agree.
+        - Gap. Kollár states the theorem for any locally compact field $K$ of characteristic zero;
+          here `K = ℝ` or `K = ℂ` (`RCLike K`).
+        - Gap. Kollár states the theorem for every separable $K$-analytic space. His notion of
+          resolution [Kol07, (2), (3)] is stated for varieties, and his proofs are for reduced
+          spaces, extended to reducible ones [Kol07, Theorem 36, proof; Proposition 37]. Here the
+          inputs are the reduced spaces (`ReducedSpace`); a non-reduced $X$ is resolved through its
+          reduction, by $\Pi_{X_{\mathrm{red}}}$ followed by the closed immersion
+          $X_{\mathrm{red}} \to X$.
+        - Gap. Kollár's clause (4), "$\Pi_X$ is projective over any compact subset of $X$", is
+          replaced by properness together with the ambient blow-up factorization over relatively
+          compact opens [Kol07, Warning 23]; [Wlo09, Theorem 2.0.2, (∗)].
+        - Gap. Kollár's clause (5), "$R$ commutes with smooth $K$-morphisms", is replaced by the
+          unique lifting of isomorphisms between open subspaces and of local analytic isomorphisms,
+          the smooth morphisms of relative dimension zero, Kollár's étale morphisms. Since the lifts
+          are unique, they respect identities and composition, so $R$ is functorial for the étale
+          morphisms between inputs. Smooth morphisms of positive relative dimension are not lifted,
+          and the isomorphism $R(Y) \cong Y \times_X R(X)$ is not stated.
+    - source: "Kollár 2007, Theorem 45 (1)–(4); Włodarczyk 2009, Theorem 2.0.1"
+      lean: "AnalyticSpace.exists_surjective_resolution_of_isReduced"
+      module: "Hironaka/Resolution/Analytic/Kol07Thm45/ResolutionAssembly.lean"
+      status: "proved"
+      note: |-
+        - Strengthening. Surjectivity is not a printed clause. It is what Włodarczyk's "proper
+          bimeromorphic" gives for a reduced complex space, whose simple locus is dense [Hir64,
+          Introduction].
+        - Gap. The statement is not printed in this form: it is [Kol07, Theorem 45 (1)–(4)] and
+          [Wlo09, Theorem 2.0.1 (1)–(2)] for `K = ℂ` and a single space, without the functoriality
+          of Kollár's (5) and Włodarczyk's (3).
+        - Gap. As in `AnalyticSpace.exists_functorial_resolution`: Kollár's Theorem 45 concerns
+          every separable complex space and here `X` is reduced, and Kollár's "projective over any
+          compact subset" is replaced by properness together with the ambient blow-up factorization
+          over relatively compact opens.
+    - source: "Hironaka 1964, Main Theorem I, p. 132"
+      lean: "AlgebraicGeometry.exists_isBlowUpAlong_smooth"
+      module: "Hironaka/Resolution/Standard/Algebraic.lean"
+      status: "proved"
+      note: |-
+        - Translation. Hironaka's "non-singular" (every local ring regular) is read as smooth over
+          `k`, `Smooth (π ≫ f)`, and his singular locus as the complement of the smooth locus
+          `f.smoothLocus`: for schemes locally of finite type over a field of characteristic zero
+          the two notions agree [Sta, Tag 00TV].
+        - Interpretation. Hironaka's "say reduced and irreducible" is read as the hypothesis
+          `IsIntegral X`.
+    - source: "Atiyah 1970, Resolution Theorem, p. 147"
+      lean: "exists_proper_analytic_monomialization"
+      module: "Hironaka/Resolution/Standard/Analytic.lean"
+      status: "proved"
+      note: |-
+        - Strengthening. Atiyah states the theorem near a point: for `f` analytic and not
+          identically zero near `0 ∈ ℝⁿ`, his map is over some open neighbourhood of `0`. Here `π`
+          is over the whole of `U`, for `f` not identically zero near any point of `U`, which is his
+          hypothesis on a connected `U`. The monomial form of the Jacobian determinant is not in his
+          theorem: it is Bierstone and Milman's clause [BM97, the sentence after Theorem 1.10]. His
+          coordinates are centred at the point and the chart coordinates here need not be, which is
+          no weaker: a coordinate that does not vanish at the point contributes a unit.
+        - Gap. Atiyah's standing convention that manifolds are connected [Ati70, footnote 2] is not
+          asserted for `M`.
+  # END GENERATED alignment.statements
+
+acknowledgements: >
+  Built on Mathlib (leanprover-community); statements checked with leanprover/comparator; API
+  documentation with a fork of doc-gen4. The mathematics follows Hironaka, Kollár, Włodarczyk and
+  Bierstone–Milman as cited above; the elementary theory of blow-ups follows Hauser's survey. The
+  other works the docstrings cite are listed with full data in references.bib; they are background
+  for the foundations.
