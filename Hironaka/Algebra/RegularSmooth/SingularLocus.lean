@@ -6,6 +6,7 @@ Authors: Chris Elliott (Resolution): formalization performed by Claude Fable 5.1
 module
 
 public import Hironaka.Algebra.RegularSmooth.Defs
+public import Hironaka.Scheme.IdealSheaf.Defs
 public import Mathlib.AlgebraicGeometry.Morphisms.Smooth
 import Hironaka.Algebra.RegularSmooth.Regular
 import Hironaka.Algebra.RegularSmooth.RegularSmoothEquiv

@@ -6,6 +6,8 @@ Authors: Chris Elliott (Resolution): formalization performed by Claude Fable 5.1
 module
 
 public import Mathlib.AlgebraicGeometry.IdealSheaf.Basic
+public import Mathlib.AlgebraicGeometry.IdealSheaf.Subscheme
+public import Mathlib.AlgebraicGeometry.IdealSheaf.Functorial
 
 /-!
 # Ideal sheaves on a scheme: stalks, order, invertibility, colon

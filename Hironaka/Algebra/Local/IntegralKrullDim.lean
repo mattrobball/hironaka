@@ -18,7 +18,7 @@ The theorem of Cohen–Seidenberg [Fre17, VII 5.7]: "if `A ⊂ B` is an integral
 noetherian rings then `dim A = dim B`" — the fact behind the uniqueness of the `d` of Noether
 normalization [Fre17, I 7.2] ("the number `d` is unique (it is the Krull dimension)"). Mathlib
 has lying over and going up (`Ideal.exists_ideal_over_prime_of_isIntegral`) and incomparability
-(`Ideal.IsIntegral.comap_lt_comap`) but no statement about `ringKrullDim`; this module assembles
+(`Ideal.IsIntegral.under_lt_under`) but no statement about `ringKrullDim`; this module assembles
 the two inequalities on `PrimeSpectrum`:
 
 * `ringKrullDim_le_of_isIntegral`: an integral ring homomorphism `f : A →+* B` (no injectivity)
@@ -63,7 +63,7 @@ theorem ringKrullDim_le_of_isIntegral (f : A →+* B) (hf : f.IsIntegral) :
   refine Order.krullDim_le_of_strictMono (PrimeSpectrum.comap f) ?_
   intro p q hpq
   rw [← PrimeSpectrum.asIdeal_lt_asIdeal] at hpq ⊢
-  exact Ideal.IsIntegral.comap_lt_comap (R := A) hpq
+  exact Ideal.IsIntegral.under_lt_under (R := A) hpq
 
 /-- Lying over: for an injective integral homomorphism every prime of `A` is the preimage of a
 prime of `B` containing a given prime `Q₀` whose preimage lies below it (going up; `Q₀ = ⊥`
@@ -164,7 +164,8 @@ theorem ringKrullDim_quotient_eq_krullDim_zeroLocus (I : Ideal R) :
 theorem ringKrullDim_quotient_radical (I : Ideal R) :
     ringKrullDim (R ⧸ I.radical) = ringKrullDim (R ⧸ I) := by
   rw [ringKrullDim_quotient_eq_krullDim_zeroLocus, ringKrullDim_quotient_eq_krullDim_zeroLocus]
-  exact Order.krullDim_eq_of_orderIso (OrderIso.setCongr _ _ (PrimeSpectrum.zeroLocus_radical I))
+  exact Order.krullDim_eq_of_orderIso
+    (Set.orderIsoOfEq _ _ (PrimeSpectrum.zeroLocus_radical I))
 
 /-- A quotient by a larger ideal has smaller dimension. -/
 theorem ringKrullDim_quotient_le_quotient_of_le {I J : Ideal R} (h : I ≤ J) :

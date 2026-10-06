@@ -69,6 +69,7 @@ theorem uniqueFactorizationMonoid_conv_zero : UniqueFactorizationMonoid (Conv K 
   rw [Multiset.prod_zero]
   exact (associated_one_iff_isUnit.mpr (isUnit_of_ne_zero_conv_zero ha)).symm
 
+set_option linter.style.haveILetI false in
 /-- A Weierstrass polynomial prime in `(Conv K m)[X]` evaluates to a prime of `Conv K (m+1)` (the
 quotients are isomorphic, `Quotient.lean`). -/
 theorem prime_convPolyEval_of_prime {d : ℕ} {c : Fin d → Conv K m}
@@ -81,7 +82,8 @@ theorem prime_convPolyEval_of_prime {d : ℕ} {c : Fin d → Conv K m}
   obtain ⟨e, -⟩ := exists_ringEquiv_quotient_weierstrass hc
   have hdom : IsDomain (Polynomial (Conv K m) ⧸ Ideal.span {weierstrassPolynomial d c}) :=
     (Ideal.Quotient.isDomain_iff_prime _).mpr ((Ideal.span_singleton_prime hp.ne_zero).mpr hp)
-  exact Function.Injective.isDomain e.toRingHom e.injective
+  letI : IsDomain (Polynomial (Conv K m) ⧸ Ideal.span {weierstrassPolynomial d c}) := hdom
+  exact e.isDomain
 
 section Succ
 

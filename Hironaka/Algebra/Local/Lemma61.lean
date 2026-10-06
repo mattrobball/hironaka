@@ -69,7 +69,7 @@ omit [Algebra ℚ R] in
 theorem isLocalHom_algebraMap_atPrime_chartOrigin (hx : maximalIdeal R = Ideal.span (Set.range x))
     (hn : (n : WithBot ℕ∞) = ringKrullDim R) [(chartOrigin x r).IsPrime] :
     IsLocalHom (algebraMap R (Localization.AtPrime (chartOrigin x r))) := by
-  refine ((local_hom_TFAE _).out 4 0).mp ?_
+  refine ((local_hom_TFAE _).out 5 1).mp ?_
   have h1 : (maximalIdeal (Localization.AtPrime (chartOrigin x r))).comap
       (algebraMap (chartRing x r) (Localization.AtPrime (chartOrigin x r))) = chartOrigin x r := by
     rw [← Ideal.under_def]
@@ -84,7 +84,7 @@ theorem isLocalHom_algebraMap_atPrime_chartOriginAt (a : Fin n → R)
     (hx : maximalIdeal R = Ideal.span (Set.range x)) (hn : (n : WithBot ℕ∞) = ringKrullDim R)
     [(chartOriginAt x r a).IsPrime] :
     IsLocalHom (algebraMap R (Localization.AtPrime (chartOriginAt x r a))) := by
-  refine ((local_hom_TFAE _).out 4 0).mp ?_
+  refine ((local_hom_TFAE _).out 5 1).mp ?_
   have h1 : (maximalIdeal (Localization.AtPrime (chartOriginAt x r a))).comap
       (algebraMap (chartRing x r) (Localization.AtPrime (chartOriginAt x r a))) =
         chartOriginAt x r a := by
@@ -188,6 +188,10 @@ theorem ord_map_transformIdeal_le_of_hasCohenChart (hx : maximalIdeal R = Ideal.
   ord_map_transformIdeal_le_of_forall x r hI hord _ fun _ hf hfm =>
     ordElem_transformElem_le_of_hasCohenChart x r hx hn hΨ hI hf hfm
 
+-- This argument uses the completion-map uniqueness API, whose elaboration exceeds the default
+-- heartbeat budget after the Lean 4.34 and Mathlib update.
+set_option maxHeartbeats 500000 in
+-- Completion-map uniqueness elaborates above the default heartbeat limit on Lean 4.34.
 /-- The same bound at the `K`-rational point `𝔪'_a` of the chart (Kollár's linear change of
 coordinates moving the origin, in the proof of [Kol07, Lemma 61]), given `HasCohenChart` for the
 shifted coordinates `x'`: through the isomorphism `R'_{𝔪'(x')} ≃ R'_{𝔪'_a}` of

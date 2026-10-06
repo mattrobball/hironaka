@@ -7,6 +7,7 @@ module
 
 public import Hironaka.Algebra.RegularSmooth.Stalk
 public import Hironaka.Scheme.IdealSheaf.Defs
+public import Mathlib.AlgebraicGeometry.IdealSheaf.Subscheme
 public import Mathlib.RingTheory.RegularLocalRing.Defs
 import Hironaka.Algebra.Local.QuotientParameters
 import Hironaka.Algebra.Local.Regular

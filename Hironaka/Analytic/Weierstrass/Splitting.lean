@@ -58,7 +58,10 @@ theorem convNorm_wQ_le (ρ : Radius (m + 1)) (d : ℕ) (F : MvPowerSeries (Fin (
         rw [coeff_wQ, key ν, ENNReal.coe_mul]
         ring
     _ ≤ _ :=
-        mul_le_mul' le_rfl (ENNReal.tsum_comp_le_tsum_of_injective (add_left_injective _) _)
+        mul_le_mul' le_rfl <| ENNReal.tsum_comp_le_tsum_of_injective
+          (f := fun ν : Fin (m + 1) →₀ ℕ => ν + Finsupp.single 0 d)
+          (add_left_injective (Finsupp.single 0 d))
+          (fun μ => ‖coeff μ F‖ₑ * (monomialEval ρ μ : ℝ≥0∞))
 
 /-- The remainder piece: `‖wR d F‖_ρ ≤ ‖F‖_ρ`. -/
 theorem convNorm_wR_le (ρ : Radius (m + 1)) (d : ℕ) (F : MvPowerSeries (Fin (m + 1)) K) :
@@ -183,7 +186,7 @@ theorem exists_radius_convNorm_le {ρ : Radius (m + 1)} {h : MvPowerSeries (Fin 
     · exact ρ.pos 0
     · exact mul_pos htpos (ρ.pos k)
   · dsimp only
-    exact if_pos rfl
+    exact ite_eq_left rfl
   · intro k
     dsimp only
     split_ifs with hk

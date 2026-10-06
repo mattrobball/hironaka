@@ -7,6 +7,8 @@ module
 
 public import Hironaka.Manifold.StructureSheaf
 public import Hironaka.Manifold.Submanifold
+public import Mathlib.LinearAlgebra.Dual.Lemmas
+public import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Hironaka.Manifold.Chart.Atlas
 import Hironaka.Manifold.Germ.ChartTransport
 import Hironaka.Manifold.Submanifold.Charts

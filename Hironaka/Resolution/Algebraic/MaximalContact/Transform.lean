@@ -143,9 +143,9 @@ theorem algebraMap_transformElem_notMem_map_span_x (𝔮 : Ideal (chartRing x r)
     exact h'
   have hP0 : MvPolynomial.map (residue R) Q ≠ 0 := by
     intro h0
-    have h1 := congrArg (MvPolynomial.coeff β) h0
-    rw [MvPolynomial.coeff_map, MvPolynomial.coeff_zero] at h1
-    exact hβ (Ideal.Quotient.eq_zero_iff_mem.mp h1)
+    have h1 := congrArg (fun P : MvPolynomial (Fin r) (ResidueField R) => P.coeff β) h0
+    rw [MvPolynomial.coeff_map, AddMonoidAlgebra.coeff_zero] at h1
+    exact hβ ((IsLocalRing.residue_eq_zero_iff _).mp h1)
   obtain ⟨⟨⟨a, ha⟩, ⟨s, hs⟩⟩, hmul⟩ :=
     (IsLocalization.mem_map_algebraMap_iff 𝔮.primeCompl (Localization.AtPrime 𝔮)).mp hmem
   rw [← map_mul] at hmul

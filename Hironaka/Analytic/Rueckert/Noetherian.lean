@@ -7,6 +7,8 @@ module
 
 public import Hironaka.Analytic.ConvSeries.ConvNorm
 public import Mathlib.RingTheory.Noetherian.Defs
+public import Mathlib.RingTheory.Noetherian.Basic
+public import Mathlib.RingTheory.Finiteness.Finsupp
 import Hironaka.Analytic.ConvSeries.Units
 import Hironaka.Analytic.Rueckert.Slices
 import Hironaka.Analytic.Rueckert.Subst

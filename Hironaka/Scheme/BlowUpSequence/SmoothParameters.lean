@@ -75,8 +75,13 @@ theorem exists_derivation_extend [Algebra.FormallySmooth A B] {M : Type*} [AddCo
     exact LinearMap.range_eq_bot.mpr (Subsingleton.elim _ _)
   obtain ⟨s, hs⟩ := Module.projective_lifting_property (KaehlerDifferential.map k A B B)
     LinearMap.id (KaehlerDifferential.map_surjective k A B)
-  have h01 := (KaehlerDifferential.exact_mapBaseChange_map k A B).split_tfae'.out 0 1
-  obtain ⟨-, l, hl⟩ := h01.mp ⟨hinj, s, hs⟩
+  obtain ⟨e, he₁, _⟩ :=
+    ((KaehlerDifferential.exact_mapBaseChange_map k A B).split_tfae'.out 1 3 rfl rfl).mp
+      ⟨hinj, s, hs⟩
+  let l : Ω[B⁄k] →ₗ[B] B ⊗[A] Ω[A⁄k] := LinearMap.fst B _ _ ∘ₗ e.toLinearMap
+  have hl : l ∘ₗ KaehlerDifferential.mapBaseChange k A B = LinearMap.id := by
+    ext x
+    simp [l, he₁]
   let L : Ω[B⁄k] →ₗ[B] M := (δ.liftKaehlerDifferential.liftBaseChange B) ∘ₗ l
   refine ⟨L.compDer (KaehlerDifferential.D k B), fun a => ?_⟩
   change L (KaehlerDifferential.D k B (algebraMap A B a)) = δ a
@@ -140,7 +145,7 @@ theorem linearIndependent_toCotangent_of_derivations_residueField {k : Type*} [C
       intro j
       rw [(D i).leibniz, hD i j, smul_residueField_eq_zero_of_mem (hw j), add_zero, smul_ite,
         smul_zero, Algebra.smul_def, ResidueField.algebraMap_eq, mul_one]
-    simp only [this, Finset.sum_ite_eq, Finset.mem_univ, if_true]
+    simp only [this, Finset.sum_ite_eq, Finset.mem_univ, ite_true]
   rw [← ha i, ← hDi]
   exact derivation_apply_eq_zero_of_mem_sq (D i) hmem
 
@@ -214,7 +219,7 @@ theorem exists_isRegularSystemOfParameters_extend [IsRegularLocalRing A] [IsRegu
       TensorProduct.mk_apply, hvj, hℓv, Finsupp.lapply_apply, Finsupp.single_apply]
     by_cases hij : i = j
     · subst hij; simp
-    · rw [if_neg hij, if_neg (Ne.symm hij)]
+    · rw [ite_eq_right hij, ite_eq_right (Ne.symm hij)]
   -- push the values to `κ(B)` and extend along the formally smooth `A → B`
   let ρ : ResidueField A →ₗ[A] ResidueField B :=
     (IsScalarTower.toAlgHom A (ResidueField A) (ResidueField B)).toLinearMap
