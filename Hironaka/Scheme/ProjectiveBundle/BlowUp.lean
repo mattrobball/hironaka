@@ -246,8 +246,8 @@ theorem isClosedImmersion_blowUpToProjectiveBundle :
 end Scheme.IdealSheafData
 
 /-- A projective morphism composed with an isomorphism on the source is projective. -/
-theorem IsProjective.isIso_comp {X X' Y : Scheme.{u}} (e : X' ⟶ X) [IsIso e] (f : X ⟶ Y)
-    [hf : IsProjective f] : IsProjective (e ≫ f) := by
+theorem IsGrothendieckProjective.isIso_comp {X X' Y : Scheme.{u}} (e : X' ⟶ X) [IsIso e] (f : X ⟶ Y)
+    [hf : IsGrothendieckProjective f] : IsGrothendieckProjective (e ≫ f) := by
   obtain ⟨E, hE, hE', i, hi, hif⟩ := hf.exists_isClosedImmersion
   exact ⟨⟨E, hE, hE', e ≫ i, inferInstance, by rw [Category.assoc, hif]⟩⟩
 
@@ -255,7 +255,7 @@ theorem IsProjective.isIso_comp {X X' Y : Scheme.{u}} (e : X' ⟶ X) [IsIso e] (
 subscheme of the projective bundle `P(I)` of its ideal sheaf (`blowUpToProjectiveBundle`), which is
 quasi-coherent of finite type (`isFinitePresentation_toModules`). -/
 theorem Scheme.IdealSheafData.isProjective_blowUpπ [IsLocallyNoetherian X] :
-    IsProjective I.blowUpπ := by
+    IsGrothendieckProjective I.blowUpπ := by
   obtain ⟨σ, hσ⟩ := I.isFinitePresentation_toModules.exists_quasicoherentData
   have : I.toModules.IsQuasicoherent := σ.isQuasicoherent
   have : SheafOfModules.IsFiniteType.{u} I.toModules := by

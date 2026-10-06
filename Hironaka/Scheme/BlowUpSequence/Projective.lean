@@ -32,10 +32,10 @@ namespace AlgebraicGeometry.Scheme.BlowUpSequence
 is a single blow-up up to isomorphism [Sta, Tag 080B], and blow-ups are projective
 [Sta, Tag 02NS]. -/
 theorem isProjective_composite {X : Scheme.{u}} [IsNoetherian X] (S : BlowUpSequence X) :
-    IsProjective S.composite := by
+    IsGrothendieckProjective S.composite := by
   obtain ⟨K, -, e, he, -⟩ := exists_blowUp_composite_iso S
   rw [← he]
   have := K.isProjective_blowUpπ
-  exact IsProjective.isIso_comp e.hom K.blowUpπ
+  exact IsGrothendieckProjective.isIso_comp e.hom K.blowUpπ
 
 end AlgebraicGeometry.Scheme.BlowUpSequence

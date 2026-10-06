@@ -22,7 +22,8 @@ It is glued by the relative gluing lemma [Sta, Tag 01LH] from the projective bun
 pullbacks by quasi-coherence (`projectiveBundleNatTrans_equifibered`), as the blow-up is glued from
 the affine blow-ups.
 
-A morphism `f : X ⟶ Y` is **projective** (`AlgebraicGeometry.IsProjective`) [Sta, Tag 01W8] when
+A morphism `f : X ⟶ Y` is **projective**
+(`AlgebraicGeometry.IsGrothendieckProjective`) [Sta, Tag 01W8] when
 `X` is isomorphic over `Y` to a closed subscheme of the projective bundle `P(E)` of a
 quasi-coherent `𝒪_Y`-module `E` of finite type: `f` is a closed immersion `X ⟶ P(E)` followed by
 `P(E) ⟶ Y`.
@@ -63,18 +64,19 @@ end ProjectiveBundle
 over `Y` to a closed subscheme of the projective bundle `P(E)` of a quasi-coherent `𝒪_Y`-module
 `E` of finite type, that is, when `f` factors as a closed immersion `X ⟶ P(E)` followed by the
 structure morphism `P(E) ⟶ Y`. A projective morphism is proper
-(`AlgebraicGeometry.IsProjective.isProper`).
+(`AlgebraicGeometry.IsGrothendieckProjective.isProper`). This declaration was renamed from
+`AlgebraicGeometry.IsProjective` to coexist with HodgeConjecture.
 
 Relation to the source.
 * **Translation.** Kollár's "projective morphism" [Kol07, (2) and (3); Theorem 27] is
-  `IsProjective`, Grothendieck's definition as in [Sta, Tag 01W8]: `E` ranges over the
+  `IsGrothendieckProjective`, Grothendieck's definition as in [Sta, Tag 01W8]: `E` ranges over the
   quasi-coherent `𝒪_Y`-modules of finite type (Mathlib's `SheafOfModules.IsQuasicoherent` and
   `SheafOfModules.IsFiniteType`). Kollár's varieties are quasi-projective, and over a base with an
   ample invertible sheaf this is equivalent to being a closed subscheme of some `ℙⁿ_Y`
   [Sta, Tag 087S]; for a general base the condition with `ℙⁿ_Y` is stronger, and the
   condition on an open cover of `Y` only ("locally projective") is weaker [Sta, Tag 01W8], a
   distinction Kollár draws in [Kol07, Example 28.1]. -/
-class IsProjective {X Y : Scheme.{u}} (f : X ⟶ Y) : Prop where
+class IsGrothendieckProjective {X Y : Scheme.{u}} (f : X ⟶ Y) : Prop where
   exists_isClosedImmersion : ∃ (E : Y.Modules) (_ : E.IsQuasicoherent)
     (_ : SheafOfModules.IsFiniteType.{u} E) (i : X ⟶ E.projectiveBundle),
     IsClosedImmersion i ∧ i ≫ E.projectiveBundleπ = f

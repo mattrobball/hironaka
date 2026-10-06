@@ -459,7 +459,7 @@ paperIdentity := some { label := "[Kol07, (2) and (3)]", href := "https://arxiv.
 For a succession `S` of an algebraic $`k`-scheme $`X` with composite $`\Pi \colon X_r \to X`:
 
 - `S.IsResolution` \[Kol07, (2)\]: $`X_r` is smooth over $`k`, $`\Pi` is projective
-  ({decl}`IsProjective`, {bpref "def:projective"}[]; hence proper), and $`\Pi` is birational, an
+  ({decl}`IsGrothendieckProjective`, {bpref "def:projective"}[]; hence proper), and $`\Pi` is birational, an
   isomorphism over a dense open subset of $`X`. Reading birationality as an isomorphism over a dense
   open subset is right for a reduced $`X`, the case of the theorems.
 - `S.IsStrongResolution` \[Kol07, (3)\], conditions (1)–(3) of Theorem 36: a resolution that is an

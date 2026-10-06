@@ -20,7 +20,7 @@ affine open `U` with `Γ(E, U)` finitely generated (such opens cover `X`,
 generated module `Γ(E, U)` over `Spec Γ(X, U) ≅ U`, which is proper
 (`affineProjectiveBundle.isProper_π`), and properness is local on the target. A projective morphism,
 a closed immersion into such a `P(E)` followed by `P(E) ⟶ X`, is therefore proper
-(`AlgebraicGeometry.IsProjective.isProper`).
+(`AlgebraicGeometry.IsGrothendieckProjective.isProper`).
 -/
 
 @[expose] public section
@@ -55,8 +55,8 @@ theorem Scheme.Modules.isProper_projectiveBundleπ {X : Scheme.{u}} (F : X.Modul
 /-- **A projective morphism is proper** [Sta, Tag 01WC]: it is a closed immersion into the
 projective bundle of a quasi-coherent sheaf of finite type followed by the bundle projection, both
 proper. -/
-instance (priority := 100) IsProjective.isProper {X Y : Scheme.{u}} (f : X ⟶ Y)
-    [hf : IsProjective f] : IsProper f := by
+instance (priority := 100) IsGrothendieckProjective.isProper {X Y : Scheme.{u}} (f : X ⟶ Y)
+    [hf : IsGrothendieckProjective f] : IsProper f := by
   obtain ⟨E, hE, hE', i, hi, rfl⟩ := hf.exists_isClosedImmersion
   have := E.isProper_projectiveBundleπ
   infer_instance

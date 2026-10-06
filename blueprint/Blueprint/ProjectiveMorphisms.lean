@@ -105,11 +105,11 @@ morphisms $`\mathbf{P}(\Gamma(\mathcal{E}, U)) \to \operatorname{Spec} \Gamma(X,
 
 # Projective morphisms
 
-::::definition "def:projective" (lean := "AlgebraicGeometry.IsProjective")
+::::definition "def:projective" (lean := "AlgebraicGeometry.IsGrothendieckProjective")
 %%%
 paperIdentity := some { label := "[Sta, Tag 01W8]", href := "https://stacks.math.columbia.edu/tag/01W8" }
 %%%
-A morphism $`f \colon X \to Y` is *projective* (`IsProjective f`) if $`X` is isomorphic over $`Y`
+A morphism $`f \colon X \to Y` is *projective* (`IsGrothendieckProjective f`) if $`X` is isomorphic over $`Y`
 to a closed subscheme of the projective bundle $`\mathbf{P}(\mathcal{E})` of a quasi-coherent
 $`\mathcal{O}_Y`-module $`\mathcal{E}` of finite type: $`f` is a closed immersion
 $`X \to \mathbf{P}(\mathcal{E})` followed by the projection \[Sta, Tag 01W8\]. This is
@@ -120,7 +120,7 @@ while asking the condition only over the members of an open cover of $`Y`, *loca
 weaker, and Kollár's Example 28.1 is a proper, locally projective morphism that is not projective
 \[Kol07, Example 28.1\].
 
-A projective morphism is proper (`IsProjective.isProper`): $`\mathbf{P}(\mathcal{E}) \to Y` is
+A projective morphism is proper (`IsGrothendieckProjective.isProper`): $`\mathbf{P}(\mathcal{E}) \to Y` is
 proper for $`\mathcal{E}` of finite type (as in the proof of \[Sta, Tag 01WC\]), being, over an
 affine open with finitely generated sections, $`\operatorname{Proj}` of a graded algebra generated
 by finitely many elements of degree one. A blow-up of a locally Noetherian scheme along an ideal sheaf $`\mathcal{I}` is

@@ -30,7 +30,7 @@ smooth scheme is non-singular. The *monoidal transformation* of `X` with centre 
 of ideal sheaf `D` is `D.blowUp`, with projection `D.blowUpπ`; a *finite succession of monoidal
 transformations* is a `BlowUpSequence X`, Kollár's blow-up sequence with specified centres
 (`S.center i`), stages (`S.stage i`) and composite `S.composite : S.last ⟶ X`. A morphism is
-*projective* (`IsProjective`) when it is a closed immersion into the projective bundle
+*projective* (`IsGrothendieckProjective`) when it is a closed immersion into the projective bundle
 `P(E) = Proj (Sym E)` (`E.projectiveBundle`) of a quasi-coherent sheaf of modules `E` of finite type
 (Mathlib's `Y.Modules` with `IsQuasicoherent` and `IsFiniteType`), followed by the projection of the
 bundle [Sta, Tag 01W8]; a projective morphism is proper. Ideal sheaves are
@@ -534,7 +534,7 @@ example {k : Type u} [Field k] {X : AlgScheme k} (S : BlowUpSequence X.left) :
       -- `X_r` is smooth over `k`
       Smooth (S.composite ≫ X.hom) ∧
       -- `Π` is projective
-      IsProjective S.composite ∧
+      IsGrothendieckProjective S.composite ∧
       -- `Π` is an isomorphism over a dense open subset
       ∃ U : X.left.Opens, Dense (U : Set X.left) ∧ IsIso (S.composite ∣_ U) :=
   BlowUpSequence.isResolution_iff S
@@ -543,7 +543,7 @@ example {k : Type u} [Field k] {X : AlgScheme k} (S : BlowUpSequence X.left) :
 `P(E) = Proj_Y (Sym E)` of a quasi-coherent `𝒪_Y`-module `E` of finite type, followed by the
 projection `P(E) ⟶ Y` [Sta, Tag 01W8]. -/
 example {X Y : Scheme.{u}} (f : X ⟶ Y) :
-    IsProjective f ↔ ∃ (E : Y.Modules) (_ : E.IsQuasicoherent)
+    IsGrothendieckProjective f ↔ ∃ (E : Y.Modules) (_ : E.IsQuasicoherent)
       (_ : SheafOfModules.IsFiniteType.{u} E) (i : X ⟶ E.projectiveBundle),
       -- a closed immersion into `P(E)`
       IsClosedImmersion i ∧
@@ -652,7 +652,8 @@ Relation to the source.
 * **Translation.** Kollár's variety is an integral algebraic `k`-scheme, `X : AlgScheme k` with
   `[IsIntegral X.left]`.
 * **Translation.** Kollár's "birational and projective morphism" is the projectivity
-  (`IsProjective`, [Sta, Tag 01W8]) and the birationality of `BlowUpSequence.IsResolution`.
+  (`IsGrothendieckProjective`, [Sta, Tag 01W8]) and the birationality of
+  `BlowUpSequence.IsResolution`.
 * **Interpretation.** Kollár's clause (3), "$\Pi^{-1}(\operatorname{Sing} X)$ is a divisor with
   simple normal crossing", is read with the reduced structure on $\Pi^{-1}(\operatorname{Sing} X)$,
   as in Theorem 36 (`AlgebraicGeometry.exists_functorial_resolution`).

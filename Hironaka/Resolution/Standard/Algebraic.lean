@@ -26,7 +26,7 @@ integral scheme `X`, separated and of finite type over a field `k` of characteri
 blow-up `π : X' → X` along an ideal sheaf supported exactly on the singular locus, with `X'` smooth
 over `k`; `π` is proper and an isomorphism over the smooth locus of `X`. It is stated with Mathlib's
 definitions and two that Mathlib lacks, effective Cartier ideal sheaves and blow-ups given by their
-universal property, defined from Mathlib's alone (`Scheme.IdealSheafData.IsEffectiveCartier`,
+universal property, defined from Mathlib's alone (`Scheme.IdealSheafData.IsEffectiveCartierIdeal`,
 `Scheme.Hom.IsBlowUpAlong`, in `Hironaka.Scheme.BlowUp.BlowUpAlong.Defs`, a module importing Mathlib
 only), so that the challenge file `Challenge/Standard.lean` imports Mathlib only and repeats the two
 definitions word for word. They are the library's `Scheme.IdealSheafData.IsInvertible` and

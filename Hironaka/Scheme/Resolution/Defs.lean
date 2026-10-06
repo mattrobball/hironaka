@@ -361,7 +361,8 @@ end Hironaka
 variable {k : Type u} [Field k] {X : AlgScheme k}
 
 /-- A succession of blow-ups `Π : X_r → X` is a *resolution* of `X` [Kol07, (2)]: `X_r` is smooth
-over `k`, `Π` is projective (`IsProjective`, hence proper), and `Π` is birational, an isomorphism
+over `k`, `Π` is projective (`IsGrothendieckProjective`, hence proper), and `Π` is
+birational, an isomorphism
 over a dense open subset of `X`. Reading birationality as an isomorphism over a dense open subset is
 right for a reduced `X`, the case of the theorems. -/
 @[mk_iff]
@@ -369,7 +370,7 @@ structure IsResolution (S : BlowUpSequence X.left) : Prop where
   /-- `X_r` is smooth over `k`. -/
   smooth : Smooth (S.composite ≫ X.hom)
   /-- `Π` is projective [Kol07, (2)]. -/
-  isProjective : IsProjective S.composite
+  isProjective : IsGrothendieckProjective S.composite
   /-- `Π` is an isomorphism over a dense open subset. -/
   exists_dense_isIso : ∃ U : X.left.Opens, Dense (U : Set X.left) ∧ IsIso (S.composite ∣_ U)
 

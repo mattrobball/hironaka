@@ -11,7 +11,7 @@ public import Hironaka.Scheme.BlowUp.UniversalProperty
 /-!
 # The Mathlib-only effective Cartier ideal sheaves and blow-ups are the library's
 
-`Scheme.IdealSheafData.IsEffectiveCartier` and `Scheme.Hom.IsBlowUpAlong`
+`Scheme.IdealSheafData.IsEffectiveCartierIdeal` and `Scheme.Hom.IsBlowUpAlong`
 (`Hironaka.Scheme.BlowUp.BlowUpAlong.Defs`), defined from Mathlib's notions alone, are the library's
 `Scheme.IdealSheafData.IsInvertible` and `IsBlowUp`:
 `Scheme.IdealSheafData.isEffectiveCartier_iff_isInvertible` and
@@ -28,7 +28,7 @@ namespace AlgebraicGeometry
 
 /-- An effective Cartier ideal sheaf is an invertible one, in the library's sense. -/
 theorem Scheme.IdealSheafData.isEffectiveCartier_iff_isInvertible {X : Scheme.{u}}
-    (J : X.IdealSheafData) : J.IsEffectiveCartier ↔ J.IsInvertible :=
+    (J : X.IdealSheafData) : J.IsEffectiveCartierIdeal ↔ J.IsInvertible :=
   Iff.rfl
 
 /-- `π.IsBlowUpAlong I` is the library's `IsBlowUp I π`. -/

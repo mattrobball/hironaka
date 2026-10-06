@@ -785,7 +785,7 @@ alignment:
         - Translation. Kollár's variety is an integral algebraic `k`-scheme, `X : AlgScheme k` with
           `[IsIntegral X.left]`.
         - Translation. Kollár's "birational and projective morphism" is the projectivity
-          (`IsProjective`, [Sta, Tag 01W8]) and the birationality of `BlowUpSequence.IsResolution`.
+          (`IsGrothendieckProjective`, [Sta, Tag 01W8]) and the birationality of `BlowUpSequence.IsResolution`.
         - Interpretation. Kollár's clause (3), "$\Pi^{-1}(\operatorname{Sing} X)$ is a divisor with
           simple normal crossing", is read with the reduced structure on
           $\Pi^{-1}(\operatorname{Sing} X)$, as in Theorem 36

@@ -66,7 +66,7 @@ definition where there is one.
   {bpref "def:exceptional_divisor"}[]).
 - *Quasi-coherent sheaf of modules, of finite type; projective bundle $`\mathbf{P}(\mathcal{E})`;
   projective morphism*: `E : X.Modules` with `E.IsQuasicoherent` and `SheafOfModules.IsFiniteType E`,
-  `E.projectiveBundle`, `IsProjective f` ({bpref "def:projective_bundle"}[],
+  `E.projectiveBundle`, `IsGrothendieckProjective f` ({bpref "def:projective_bundle"}[],
   {bpref "def:projective"}[]).
 - *Finite succession of blow-ups*: `BlowUpSequence X` ({bpref "def:blowup_sequence"}[]).
 - *Normal crossings (Hironaka); simple normal crossings divisor (Kollár)*:
